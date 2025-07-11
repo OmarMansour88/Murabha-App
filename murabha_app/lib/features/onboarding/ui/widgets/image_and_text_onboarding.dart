@@ -10,10 +10,18 @@ class ImageAndTextOnboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SvgPicture.asset("assets/svgs/onboarding_low_opacity.svg"),
+        SvgPicture.asset(
+          "assets/svgs/onboarding_low_opacity.svg",
+          width: double.maxFinite,
+          height: 430.h,
+        ),
         Container(
           width: double.infinity,
-          height: 250.h,
+          height: 300.h,
+          // decoration: BoxDecoration(
+          //   color: Colors.yellow,
+          //   // borderRadius: BorderRadius.circular(16.sp),
+          // ),
           // foregroundDecoration: BoxDecoration(
           //   gradient: LinearGradient(
           //     begin: Alignment.bottomCenter,
@@ -27,20 +35,22 @@ class ImageAndTextOnboarding extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 70.h,
+          bottom: 100.h,
           left: 20.w,
           right: 20.w,
           child: Padding(
-            padding: EdgeInsets.all(20.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Text(
               'Best Auto\nFinance App',
               textAlign: TextAlign.center,
-              style: TextStyleManager.font32PrimaryRedBold,
+              style: TextStyleManager.font32PrimaryRedBold.copyWith(
+                letterSpacing: 2.sp,
+              ),
             ),
           ),
         ),
         Positioned(
-          bottom: 20.h,
+          bottom: 30.h,
           left: 20.w,
           right: 20.w,
           child: Padding(
