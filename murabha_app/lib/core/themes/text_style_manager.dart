@@ -19,4 +19,29 @@ class TextStyleManager {
     color: Colors.white,
     fontWeight: FontWeightManager.semiBold,
   );
+  static TextStyle font24PrimaryColorBold = TextStyle(
+    fontSize: 24.sp,
+    color: ColorsManager.primaryColor,
+    fontWeight: FontWeightManager.bold,
+  );
+  static TextStyle font14PGreyRegular = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsManager.grey,
+    fontWeight: FontWeightManager.regular,
+  );
+  static TextStyle font14LightGreyMedium = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsManager.lightGrey,
+    fontWeight: FontWeightManager.medium,
+  );
+  static TextStyle font11LightGreyMedium = TextStyle(
+    fontSize: 11.sp,
+    color: ColorsManager.lightGrey,
+    fontWeight: FontWeightManager.medium,
+  );
+  static TextStyle font12TextLightGreyRegular = TextStyle(
+    fontSize: 11.sp,
+    color: ColorsManager.textLightGrey,
+    fontWeight: FontWeightManager.regular,
+  );
 }
