@@ -20,6 +20,7 @@ class AppUniversaltextField extends StatelessWidget {
   final double? textFieldWidth;
   final double? textFieldHeight;
   final Color? filledColor;
+  final TextEditingController? controller;
 
   const AppUniversaltextField({
     super.key,
@@ -39,57 +40,55 @@ class AppUniversaltextField extends StatelessWidget {
     this.textFieldWidth,
     this.textFieldHeight,
     this.filledColor,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: textFieldWidth ?? double.maxFinite,
-      height: textFieldHeight ?? 50.h,
-      child: TextFormField(
-        onChanged: onChanged,
-        validator: (value) {
-          return validator(value);
-        },
-        decoration: InputDecoration(
-          isDense: true,
-          hintText: text,
-          hintStyle: hintStyle ?? TextStyleManager.font14LightGreyMedium,
-          enabledBorder:
-              enabledBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: ColorsManager.lighterGrey),
-              ),
-          focusedBorder:
-              enabledFocusBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: ColorsManager.lightGrey),
-              ),
-          errorBorder:
-              errorBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: Colors.red),
-              ),
-          focusedErrorBorder:
-              errorFocusBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: Colors.red),
-              ),
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: horizontalPadding ?? 20.w,
-            vertical: verticalPadding ?? 15.h,
-          ),
-          suffixIcon: suffixIcon,
-          prefixIcon: prefixIcon,
-          fillColor: filledColor ?? ColorsManager.moreLighterGrey,
-          filled: true,
+    return TextFormField(
+      onChanged: onChanged,
+      controller: controller,
+      validator: (value) {
+        return validator(value);
+      },
+      decoration: InputDecoration(
+        isDense: true,
+        hintText: text,
+        hintStyle: hintStyle ?? TextStyleManager.font14LightGreyMedium,
+        enabledBorder:
+            enabledBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: ColorsManager.lighterGrey),
+            ),
+        focusedBorder:
+            enabledFocusBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: ColorsManager.lightGrey),
+            ),
+        errorBorder:
+            errorBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: Colors.red),
+            ),
+        focusedErrorBorder:
+            errorFocusBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: Colors.red),
+            ),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding ?? 20.w,
+          vertical: verticalPadding ?? 15.h,
         ),
-        obscureText: isObscureText,
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+        fillColor: filledColor ?? ColorsManager.moreLighterGrey,
+        filled: true,
       ),
+      obscureText: isObscureText,
     );
   }
 }
