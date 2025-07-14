@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/app_button.dart';
+import 'package:murabha_app/features/login/logic/cubit/login_cubit_cubit.dart';
 import 'package:murabha_app/features/login/ui/widgets/other_signin_options.dart';
 import 'package:murabha_app/features/login/ui/widgets/terms_and_conditions.dart';
 import 'package:murabha_app/features/login/ui/widgets/username_and_password_textfields.dart';
@@ -39,7 +43,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 UsernameAndPasswordTextFields(),
                 VerticalSpacing(50.h),
                 AppUniversalButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (context
+                        .read<LoginCubit>()
+                        .formKey
+                        .currentState!
+                        .validate()) {
+                      context.pushNamed(Routes.homeScreen);
+                    }
+                  },
                   text: "Sign In",
                   textStyle: TextStyleManager.font16WhiteSemibold,
                   width: double.maxFinite,
