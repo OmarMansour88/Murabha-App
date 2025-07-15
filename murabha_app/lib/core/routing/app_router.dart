@@ -7,7 +7,6 @@ import 'package:murabha_app/features/home/ui/home_Screen.dart';
 import 'package:murabha_app/features/login/logic/cubit/login_cubit_cubit.dart';
 import 'package:murabha_app/features/login/ui/login_screen.dart';
 import 'package:murabha_app/features/onboarding/ui/onboarding_screen.dart';
-import 'package:murabha_app/navigation_bar.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {

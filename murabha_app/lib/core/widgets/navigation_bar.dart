@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:murabha_app/core/helpers/extensions.dart';
-import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/features/browseCar/ui/browse_car.dart';
 import 'package:murabha_app/features/home/ui/home_screen.dart';
@@ -45,7 +43,16 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: Offset(0, 3), // Shadow position
+              ),
+            ],
           ),
+
           child: IconTheme(
             data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
             child: Row(
@@ -145,18 +152,7 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
                   icon: const Icon(Icons.account_circle_outlined),
-                  onPressed: () {
-                    // setState(() {
-                    //   for (var i = 0; i < chosenIndex.length; i++) {
-                    //     if (i == 3) {
-                    //       chosenIndex[i] = true;
-                    //     } else {
-                    //       chosenIndex[i] = false;
-                    //     }
-                    //   }
-                    //   print(chosenIndex);
-                    // });
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
                       chosenIndex[3]
