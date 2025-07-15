@@ -40,8 +40,48 @@ class TextStyleManager {
     fontWeight: FontWeightManager.medium,
   );
   static TextStyle font12TextLightGreyRegular = TextStyle(
-    fontSize: 11.sp,
+    fontSize: 12.sp,
     color: ColorsManager.textLightGrey,
     fontWeight: FontWeightManager.regular,
+  );
+  static TextStyle font16BlackBold = TextStyle(
+    fontSize: 16.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.bold,
+  );
+  static TextStyle font11SimpleGreyRegular = TextStyle(
+    fontSize: 11.sp,
+    color: ColorsManager.simpleGrey,
+    fontWeight: FontWeightManager.regular,
+  );
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    color: Colors.white,
+    fontWeight: FontWeightManager.medium,
+  );
+  static TextStyle font12PrimaryColorRegular = TextStyle(
+    fontSize: 12.sp,
+    color: ColorsManager.primaryColor,
+    fontWeight: FontWeightManager.regular,
+  );
+  static TextStyle font18BlackSemiBold = TextStyle(
+    fontSize: 18.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.semiBold,
+  );
+  static TextStyle font12BlackRegular = TextStyle(
+    fontSize: 12.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.regular,
+  );
+  static TextStyle font12GreyMedium = TextStyle(
+    fontSize: 12.sp,
+    color: ColorsManager.grey,
+    fontWeight: FontWeightManager.medium,
+  );
+  static TextStyle font16LightBlackBold = TextStyle(
+    fontSize: 16.sp,
+    color: ColorsManager.lightblack,
+    fontWeight: FontWeightManager.bold,
   );
 }
