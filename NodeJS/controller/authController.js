@@ -3,35 +3,54 @@ const db = require('../db/db');
 
 const loginUser = async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { cif_username, users_password } = req.body;
 
-        if (!username || !password) {
-            return res.status(400).json({ message: 'Username and password are required' });
+        // Input validation
+        if (!cif_username || !users_password) {
+            return res.status(400).json({
+                status: 'fail',
+                code: 400,
+                message: 'Both username and password are required.'
+            });
         }
 
+        // Query user from DB
         const [results] = await db.query(
-            'SELECT id, username, password_hash FROM users WHERE username = ?', 
-            [username]
+            'SELECT user_id, cif_username, users_password FROM users WHERE cif_username = ?',
+            [cif_username]
         );
 
-        if (results.length === 0) {
-            return res.status(401).json({ message: 'Invalid credentials' });
+        if (results.length === 0 || users_password !== results[0].users_password) {
+            return res.status(401).json({
+                status: 'fail',
+                code: 401,
+                message: 'The username or password you entered is incorrect. Please try again.'
+            });
         }
 
         const user = results[0];
-        
-        if (password !== user.password_hash) {
-            return res.status(401).json({ message: 'Invalid credentials' });
-        }
 
-        const token = jwt.sign({ userId: user.id }, 'temp-secret-key', { expiresIn: '1h' });
+        // Generate JWT
+        const token = jwt.sign(
+            { userId: user.user_id },
+            'temp-secret-key',
+            { expiresIn: '1h' }
+        );
 
-        // Return ONLY the token
-        return res.json({ token });
+        return res.status(200).json({
+            status: 'success',
+            code: 200,
+            message: 'Login successful.',
+            data: { token }
+        });
 
     } catch (err) {
         console.error('Login error:', err);
-        return res.status(500).json({ message: 'Server error' });
+        return res.status(500).json({
+            status: 'error',
+            code: 500,
+            message: 'An internal server error occurred. Please try again later.'
+        });
     }
 };
 

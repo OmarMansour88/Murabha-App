@@ -49,6 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         .formKey
                         .currentState!
                         .validate()) {
+                          // context.read<LoginCubit>().emitLoginState();
                       context.pushNamed(Routes.homeScreen);
                     }
                   },
