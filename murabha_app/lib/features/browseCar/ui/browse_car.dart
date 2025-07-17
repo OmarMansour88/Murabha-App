@@ -2,10 +2,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
 import 'package:murabha_app/features/browseCar/data/models/car_brands.dart';
+import 'package:murabha_app/features/carList/ui/list_of_car_screen.dart';
 
 class BrowseCar extends StatefulWidget {
   const BrowseCar({super.key});
@@ -71,49 +74,54 @@ class _BrowseCarState extends State<BrowseCar> {
                         ),
                         itemCount: 50,
                         itemBuilder: (context, index) {
-                          return Container(
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(
-                              color: Colors.white, // Box background color
-                              borderRadius: BorderRadius.circular(
-                                12,
-                              ), // Rounded corners
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: Offset(0, 3), // Shadow position
-                                ),
-                              ],
-                            ),
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 8.h,
-                            ), // Padding inside the box
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(
-                                      8,
-                                    ), // Optional if you want rounded image corners
-                                    child: Image.network(
-                                      optimizedUrls[index],
-                                      fit: BoxFit.contain,
+                          return GestureDetector(
+                            onTap: () {
+                              context.pushNamed(Routes.listCarScreen);
+                            },
+                            child: Container(
+                              height: double.maxFinite,
+                              decoration: BoxDecoration(
+                                color: Colors.white, // Box background color
+                                borderRadius: BorderRadius.circular(
+                                  12,
+                                ), // Rounded corners
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.3),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: Offset(0, 3), // Shadow position
+                                  ),
+                                ],
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 8.w,
+                                vertical: 8.h,
+                              ), // Padding inside the box
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(
+                                        8,
+                                      ), // Optional if you want rounded image corners
+                                      child: Image.network(
+                                        optimizedUrls[index],
+                                        fit: BoxFit.contain,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  names[index],
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
+                                  SizedBox(height: 5),
+                                  Text(
+                                    names[index],
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           );
                         },
