@@ -84,4 +84,9 @@ class TextStyleManager {
     color: ColorsManager.lightblack,
     fontWeight: FontWeightManager.bold,
   );
+  static TextStyle font20BlackBold = TextStyle(
+    fontSize: 20.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.bold,
+  );
 }
