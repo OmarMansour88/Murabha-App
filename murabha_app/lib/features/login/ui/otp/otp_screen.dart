@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/widgets/app_button.dart';
-import 'package:murabha_app/features/login/ui/widgets/login/otp/image_and_text.dart';
-import 'package:murabha_app/features/login/ui/widgets/login/otp/otp_textfields.dart';
+import 'package:murabha_app/features/login/logic/otp/cubit/otp_cubit.dart';
+import 'package:murabha_app/features/login/ui/otp/widgets/image_and_text.dart';
+import 'package:murabha_app/features/login/ui/otp/widgets/otp_bloc_listener.dart';
+import 'package:murabha_app/features/login/ui/otp/widgets/otp_textfields.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -24,7 +27,19 @@ class _OtpScreenState extends State<OtpScreen> {
               ImageAndText(),
               OtpTextfields(),
               VerticalSpacing(100.h),
-              AppUniversalButton(onPressed: () {}, text: "Sign in"),
+              AppUniversalButton(
+                onPressed: () {
+                  if (context
+                      .read<OtpCubit>()
+                      .formKey
+                      .currentState!
+                      .validate()) {
+                    context.read<OtpCubit>().emitOtpState();
+                  }
+                },
+                text: "Sign in",
+              ),
+              OtpBlocListener(),
             ],
           ),
         ),

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/widgets/app_textfield.dart';
-import 'package:murabha_app/features/login/logic/cubit/login_cubit_cubit.dart';
+import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_cubit.dart';
 
 class UsernameAndPasswordTextFields extends StatefulWidget {
   UsernameAndPasswordTextFields({super.key});
@@ -33,6 +33,7 @@ class _UsernameAndPasswordTextFieldsState
       child: Column(
         children: [
           AppUniversaltextField(
+            keyboardType: TextInputType.number,
             controller: usernameController,
             text: 'CIF',
             validator: (value) {
