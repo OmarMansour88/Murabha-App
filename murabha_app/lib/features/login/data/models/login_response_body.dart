@@ -3,23 +3,37 @@ part 'login_response_body.g.dart';
 
 @JsonSerializable()
 class LoginResponse {
-  final String? message;
-  final UserData? userData;
-  final bool? status;
-  final int? code;
+  @JsonKey(name: "body")
+  final RequestBody? requestBody;
+  final String? customerMnemonic;
+  final String? accountId;
+  final String? customerShortName;
+  final String? nationalityName;
 
-  LoginResponse({this.message, this.userData, this.status, this.code});
+  LoginResponse(
+    this.customerMnemonic,
+    this.accountId,
+    this.customerShortName,
+    this.nationalityName, {
+    this.requestBody,
+  });
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
 }
 
 @JsonSerializable()
-class UserData {
-  final String? token;
-  @JsonKey(name: 'username')
-  final String? userName;
+class RequestBody {
+  final String? customerMnemonic;
+  final String? accountId;
+  final String? customerShortName;
+  final String? nationalityName;
 
-  UserData({this.token, this.userName});
-  factory UserData.fromJson(Map<String, dynamic> json) =>
-      _$UserDataFromJson(json);
+  RequestBody({
+    this.customerMnemonic,
+    this.accountId,
+    this.customerShortName,
+    this.nationalityName,
+  });
+  factory RequestBody.fromJson(Map<String, dynamic> json) =>
+      _$RequestBodyFromJson(json);
 }

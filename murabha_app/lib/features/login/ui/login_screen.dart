@@ -6,10 +6,12 @@ import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/app_button.dart';
+import 'package:murabha_app/features/login/data/models/login_request_body.dart';
 import 'package:murabha_app/features/login/logic/cubit/login_cubit_cubit.dart';
-import 'package:murabha_app/features/login/ui/widgets/other_signin_options.dart';
-import 'package:murabha_app/features/login/ui/widgets/terms_and_conditions.dart';
-import 'package:murabha_app/features/login/ui/widgets/username_and_password_textfields.dart';
+import 'package:murabha_app/features/login/ui/widgets/login/login_bloc_listener.dart';
+import 'package:murabha_app/features/login/ui/widgets/login/other_signin_options.dart';
+import 'package:murabha_app/features/login/ui/widgets/login/terms_and_conditions.dart';
+import 'package:murabha_app/features/login/ui/widgets/login/username_and_password_textfields.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -49,8 +51,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         .formKey
                         .currentState!
                         .validate()) {
-                          // context.read<LoginCubit>().emitLoginState();
-                      context.pushNamed(Routes.homeScreen);
+                      // context.read<LoginCubit>().emitLoginState();
+                      // context.pushNamed(Routes.otpScreen);
+                      context.read<LoginCubit>().emitLoginState(
+                        LoginRequestBody(
+                          accountId: context
+                              .read<LoginCubit>()
+                              .emailController
+                              .text,
+                        ),
+                      );
                     }
                   },
                   text: "Sign In",
@@ -63,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 VerticalSpacing(40.h),
                 TermsAndConditions(),
                 VerticalSpacing(20.h),
+                LoginBlocListener(),
               ],
             ),
           ),

@@ -8,28 +8,35 @@ part of 'login_response_body.dart';
 
 LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
     LoginResponse(
-      message: json['message'] as String?,
-      userData: json['userData'] == null
+      json['customerMnemonic'] as String?,
+      json['accountId'] as String?,
+      json['customerShortName'] as String?,
+      json['nationalityName'] as String?,
+      requestBody: json['body'] == null
           ? null
-          : UserData.fromJson(json['userData'] as Map<String, dynamic>),
-      status: json['status'] as bool?,
-      code: (json['code'] as num?)?.toInt(),
+          : RequestBody.fromJson(json['body'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
     <String, dynamic>{
-      'message': instance.message,
-      'userData': instance.userData,
-      'status': instance.status,
-      'code': instance.code,
+      'body': instance.requestBody,
+      'customerMnemonic': instance.customerMnemonic,
+      'accountId': instance.accountId,
+      'customerShortName': instance.customerShortName,
+      'nationalityName': instance.nationalityName,
     };
 
-UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
-  token: json['token'] as String?,
-  userName: json['username'] as String?,
+RequestBody _$RequestBodyFromJson(Map<String, dynamic> json) => RequestBody(
+  customerMnemonic: json['customerMnemonic'] as String?,
+  accountId: json['accountId'] as String?,
+  customerShortName: json['customerShortName'] as String?,
+  nationalityName: json['nationalityName'] as String?,
 );
 
-Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
-  'token': instance.token,
-  'username': instance.userName,
-};
+Map<String, dynamic> _$RequestBodyToJson(RequestBody instance) =>
+    <String, dynamic>{
+      'customerMnemonic': instance.customerMnemonic,
+      'accountId': instance.accountId,
+      'customerShortName': instance.customerShortName,
+      'nationalityName': instance.nationalityName,
+    };

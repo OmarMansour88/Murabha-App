@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
-import 'package:murabha_app/features/browseCar/ui/browse_car.dart';
+import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
 import 'package:murabha_app/features/home/ui/home_screen.dart';
 
 class AppUniversalBottomNavBar extends StatefulWidget {
   final int? index;
-  AppUniversalBottomNavBar({required this.index});
+  AppUniversalBottomNavBar({this.index});
 
   @override
   State<AppUniversalBottomNavBar> createState() =>

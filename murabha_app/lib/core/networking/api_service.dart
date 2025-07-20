@@ -10,8 +10,8 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  @POST(ApiConstants.login)
-  Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
+  @GET(ApiConstants.login)
+  Future<LoginResponse> login(@Query('accountId') String accountId);
 
   // @POST(ApiConstants.signup)
   // Future<SignupResponseBody> signup(
