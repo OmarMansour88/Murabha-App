@@ -21,6 +21,7 @@ class AppUniversaltextField extends StatelessWidget {
   final double? textFieldHeight;
   final Color? filledColor;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
 
   const AppUniversaltextField({
     super.key,
@@ -41,11 +42,13 @@ class AppUniversaltextField extends StatelessWidget {
     this.textFieldHeight,
     this.filledColor,
     this.controller,
+    this.keyboardType,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType ?? TextInputType.name,
       onChanged: onChanged,
       controller: controller,
       validator: (value) {
