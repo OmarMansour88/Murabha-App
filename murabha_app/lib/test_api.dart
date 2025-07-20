@@ -1,28 +1,25 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 
-Future<void> getCustomerFromNode(String id) async {
-  // Replace with your machine’s IP if testing on real phone
+Future<void> fetchCustomer(String id) async {
+  final dio = Dio();
   const String baseUrl = 'http://localhost:3000';
-
-  final String url = '$baseUrl/customer/$id';
-
+  final String url = '$baseUrl/customer';
   try {
-    final response = await http.get(Uri.parse(url));
+    final response = await dio.get(
+      url,
+      queryParameters: {"accountId": id}, // Replace with your endpoint
+    );
 
     if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      print('Customer from Node.js: $data');
+      print('Success: ${response.data}');
     } else {
-      print('Failed to fetch. Status: ${response.statusCode}');
-      print('Failed to fetch. Status: ${response.body}');
+      print('Failed with status: ${response.statusCode}');
     }
   } catch (e) {
     print('Error: $e');
   }
 }
 
-// void main() {
-//   getCustomerFromNode("100005");
-//   // print();
-// }
+void main() {
+  fetchCustomer("2312313");
+}

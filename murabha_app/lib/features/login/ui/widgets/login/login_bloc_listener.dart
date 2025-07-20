@@ -29,7 +29,11 @@ class LoginBlocListener extends StatelessWidget {
           },
           success: (LoginResponse) {
             context.pop();
-            context.pushNamed(Routes.homeScreen);
+            SnackBar(
+              content: Text('Login Successfully'),
+              duration: Duration(seconds: 5),
+            );
+            context.pushNamed(Routes.otpScreen);
           },
           failure: (errorMessage) {
             context.pop(); // Close the loading dialog
@@ -42,7 +46,7 @@ class LoginBlocListener extends StatelessWidget {
           },
         );
       },
-      child: Placeholder(),
+      child: SizedBox.shrink(),
     );
   }
 }
