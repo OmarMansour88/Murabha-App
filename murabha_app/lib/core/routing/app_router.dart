@@ -9,6 +9,7 @@ import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_cubit.d
 import 'package:murabha_app/features/login/logic/otp/cubit/otp_cubit.dart';
 import 'package:murabha_app/features/login/ui/login/login_screen.dart';
 import 'package:murabha_app/features/login/ui/otp/otp_screen.dart';
+import 'package:murabha_app/features/notification_list/ui/notify_list_screen.dart';
 import 'package:murabha_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:murabha_app/features/carList/ui/list_of_car_screen.dart';
 
@@ -40,6 +41,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ApplicationForm());
       case Routes.listCarScreen:
         return MaterialPageRoute(builder: (_) => ListOfCarScreen());
+      case Routes.notificationListScreen:
+        return MaterialPageRoute(builder: (_) => NotificationListScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

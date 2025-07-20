@@ -6,4 +6,5 @@ class Routes {
   static const String listCarScreen = '/listCarScreen';
   static const String otpScreen = '/otpScreen';
   static const String applicationForm = '/applicationForm';
+  static const String notificationListScreen = '/notificationListScreen';
 }

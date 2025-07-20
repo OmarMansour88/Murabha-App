@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 
@@ -27,7 +29,7 @@ class ImageandNotificationsIcon extends StatelessWidget {
           backgroundColor: ColorsManager.lighterGrey,
           child: GestureDetector(
             onTap: () {
-              // Handle notification icon tap
+              context.pushNamed(Routes.notificationListScreen);
             },
             child: Image.asset(
               'assets/images/notification.png',
