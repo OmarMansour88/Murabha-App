@@ -33,6 +33,7 @@ class _UsernameAndPasswordTextFieldsState
       child: Column(
         children: [
           AppUniversaltextField(
+            keyboardType: TextInputType.number,
             controller: usernameController,
             text: 'CIF',
             validator: (value) {
