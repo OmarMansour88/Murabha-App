@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
@@ -21,6 +22,11 @@ class AppUniversaltextField extends StatelessWidget {
   final double? textFieldHeight;
   final Color? filledColor;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
+  final TextAlign? textAlign;
+  final int? maxLength;
+  final FocusNode? focusNode;
+  final List<TextInputFormatter>? inputFormatters;
 
   const AppUniversaltextField({
     super.key,
@@ -41,13 +47,23 @@ class AppUniversaltextField extends StatelessWidget {
     this.textFieldHeight,
     this.filledColor,
     this.controller,
+    this.keyboardType,
+    this.textAlign,
+    this.maxLength,
+    this.inputFormatters,
+    this.focusNode,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType ?? TextInputType.name,
       onChanged: onChanged,
       controller: controller,
+      focusNode: focusNode,
+      textAlign: textAlign ?? TextAlign.start,
+      maxLength: maxLength ?? 255,
+      inputFormatters: inputFormatters,
       validator: (value) {
         return validator(value);
       },
