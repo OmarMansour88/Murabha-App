@@ -8,6 +8,7 @@ import 'package:murabha_app/features/home/ui/home_Screen.dart';
 import 'package:murabha_app/features/login/logic/cubit/login_cubit_cubit.dart';
 import 'package:murabha_app/features/login/ui/login_screen.dart';
 import 'package:murabha_app/features/login/ui/otp_screen.dart';
+import 'package:murabha_app/features/notification_list/ui/notify_list_screen.dart';
 import 'package:murabha_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:murabha_app/features/carList/ui/list_of_car_screen.dart';
 
@@ -17,14 +18,14 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
+      // case Routes.loginScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => BlocProvider(
+      //       create: (context) => getIt<LoginCubit>(),
+      //       child: LoginScreen(),
+      //     ),
+      //   );
       case Routes.loginScreen:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: LoginScreen(),
-          ),
-        );
-      case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.carBrowseScreen:
         return MaterialPageRoute(builder: (_) => BrowseCar());
@@ -34,6 +35,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ApplicationForm());
       case Routes.listCarScreen:
         return MaterialPageRoute(builder: (_) => ListOfCarScreen());
+      case Routes.notificationListScreen:
+        return MaterialPageRoute(builder: (_) => NotificationListScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
