@@ -1,20 +1,19 @@
+// index.js or server.js
 const express = require('express');
 const app = express();
 const port = 3000;
 
-// GET /verify?otpCode=123456
 app.get('/otp', (req, res) => {
   const otpCode = req.query.otpCode;
-  if (!otpCode) {
-    return res.status(400).json({ error: 'otpCode is required' });
+  console.log("OTP Code received:", otpCode);
+
+  if (otpCode === "1234") {
+    res.status(200).json({ message: "OTP verified successfully!" });
+  } else {
+    res.status(400).json({ error: "Invalid OTP" });
   }
-
-  // You can now use the OTP code (e.g., validate it)
-  console.log('Received OTP:', otpCode);
-
-  res.json({ message: 'OTP received successfully', otpCode });
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
