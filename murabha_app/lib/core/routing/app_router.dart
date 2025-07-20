@@ -27,8 +27,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.carBrowseScreen:
         return MaterialPageRoute(builder: (_) => BrowseCar());
-      case Routes.listCarScreen:
-        return MaterialPageRoute(builder: (_) => ListOfCarScreen());
       case Routes.otpScreen:
         return MaterialPageRoute(builder: (_) => OtpScreen());
       case Routes.applicationForm:
