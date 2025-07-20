@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:murabha_app/core/networking/api_result.dart';
-import 'package:murabha_app/features/login/data/models/login_request_body.dart';
-import 'package:murabha_app/features/login/data/repo/login_repo.dart';
-import 'package:murabha_app/features/login/logic/cubit/login_cubit_state.dart';
+import 'package:murabha_app/features/login/data/models/login/login_request_body.dart';
+import 'package:murabha_app/features/login/data/repo/login/login_repo.dart';
+import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_state.dart';
 
 class LoginCubit extends Cubit<LoginCubitState> {
   final LoginRepo _loginRepo;

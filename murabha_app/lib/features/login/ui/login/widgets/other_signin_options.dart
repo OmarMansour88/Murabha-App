@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/app_divider.dart';
-import 'package:murabha_app/features/login/ui/widgets/login/social_media_options.dart';
+import 'package:murabha_app/features/login/ui/login/widgets/social_media_options.dart';
 
 class OtherSignInOptions extends StatelessWidget {
   const OtherSignInOptions({super.key});

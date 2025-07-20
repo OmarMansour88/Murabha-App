@@ -1,6 +1,7 @@
 class ApiConstants {
   static const String baseUrl = 'http://localhost:3000';
-  static const String login = '/customer';
+  static const String login = '/test/customer';
+  static const String otp = '/test/otp';
 }
 
 class ApiErrors {

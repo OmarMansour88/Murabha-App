@@ -14,52 +14,32 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
-      // backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                VerticalSpacing(10.h),
-                ImageandNotificationsIcon(),
-                // VerticalSpacing(10.h),
-                ApplyForACarCard(),
-                VerticalSpacing(20.h),
-                CarBrandsSection(),
-                // VerticalSpacing(10.h),
-                Text(
-                  "Recomendations",
-                  style: TextStyleManager.font18BlackSemiBold,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VerticalSpacing(10.h),
+              ImageandNotificationsIcon(),
+              ApplyForACarCard(),
+              VerticalSpacing(20.h),
+              CarBrandsSection(),
+              Text(
+                "Recomendations",
+                style: TextStyleManager.font18BlackSemiBold,
+              ),
+              VerticalSpacing(10.h),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return RecomendedCars();
+                  },
                 ),
-                VerticalSpacing(10.h),
-                SizedBox(
-                  height: double.maxFinite,
-                  width: double.maxFinite,
-                  child: ListView.builder(
-                    itemCount: 4,
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, index) {
-                      return RecomendedCars();
-                    },
-                  ),
-                ),
-              ],
-
-              // style: Theme.of(context).textTheme.headline4,
-            ),
+              ),
+            ],
           ),
-
-          // Positioned(
-          //   bottom: 0.h,
-          //   child: Container(
-          //     height: 50.h,
-          //     width: double.maxFinite,
-          //     decoration: BoxDecoration(color: Colors.white),
-          //   ),
-          // ),
         ),
       ),
       bottomNavigationBar: AppUniversalBottomNavBar(index: 0),
