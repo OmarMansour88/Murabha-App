@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/widgets/app_button.dart';
 import 'package:murabha_app/features/login/logic/otp/cubit/otp_cubit.dart';
 import 'package:murabha_app/features/login/ui/otp/widgets/image_and_text.dart';
@@ -34,7 +36,8 @@ class _OtpScreenState extends State<OtpScreen> {
                       .formKey
                       .currentState!
                       .validate()) {
-                    context.read<OtpCubit>().emitOtpState();
+                    // context.read<OtpCubit>().emitOtpState();
+                    context.pushNamed(Routes.homeScreen);
                   }
                 },
                 text: "Sign in",

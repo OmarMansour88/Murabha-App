@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
+import 'package:murabha_app/core/themes/text_style_manager.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
@@ -40,16 +41,12 @@ class ProfileHeader extends StatelessWidget {
                 children: [
                   Text(
                     "Mohamed Amr",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: TextStyleManager.font14BlackRegular,
                   ),
                   SizedBox(height: 4.h),
                   Text(
                     "+20 123 456 7890",
-                    style: TextStyle(color: Colors.grey[600], fontSize: 10.sp),
+                    style: TextStyleManager.font10GreyRegular,
                   ),
                 ],
               ),

@@ -3,10 +3,12 @@ const db = require('../db/db');
 
 const loginUser = async (req, res) => {
     try {
-        const { cif_username, users_password } = req.body;
-
+        const  cif_username = req.body.username;
+        var users_password  = req.body.password;
+        console.error(req.body.toString());
         // Input validation
         if (!cif_username || !users_password) {
+            console.error(`${cif_username} or ${users_password} is missing`);
             return res.status(400).json({
                 status: 'fail',
                 code: 400,

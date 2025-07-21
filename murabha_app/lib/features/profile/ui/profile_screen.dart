@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
+import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
 import 'package:murabha_app/features/profile/ui/widgets/profile_header.dart';
 import 'package:murabha_app/features/profile/ui/widgets/profile_options.dart';
@@ -37,11 +38,7 @@ class ProfileScreen extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "MuraBaha",
-                        style: TextStyle(
-                          fontSize: 20.sp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: TextStyleManager.font20BlackRegular,
                       ),
                     ),
                   ),
