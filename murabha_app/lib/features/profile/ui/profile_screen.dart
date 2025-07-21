@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
 import 'package:murabha_app/features/profile/ui/widgets/profile_header.dart';
 import 'package:murabha_app/features/profile/ui/widgets/profile_options.dart';
@@ -15,10 +16,10 @@ class ProfileScreen extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: [
-            // Background image
             Container(
               width: double.infinity,
               height: 200.h,
+              color: ColorsManager.primaryColor,
               child: SvgPicture.asset(
                 'assets/svgs/home_screen_card_background.svg',
                 fit: BoxFit.cover,
