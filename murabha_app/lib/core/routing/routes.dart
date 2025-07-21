@@ -7,4 +7,5 @@ class Routes {
   static const String otpScreen = '/otpScreen';
   static const String applicationForm = '/applicationForm';
   static const String notificationListScreen = '/notificationListScreen';
+  static const String carDetailsScreen = '/CarDetails';
 }

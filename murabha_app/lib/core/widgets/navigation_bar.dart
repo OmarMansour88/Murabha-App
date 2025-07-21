@@ -34,7 +34,7 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
   Widget build(BuildContext context) {
     return BottomAppBar(
       // shape: shape,
-      height: 80,
+      height: 80.h,
       color: Colors.transparent,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
