@@ -48,7 +48,7 @@ class _ListOfCarState extends State<ListOfCar> {
             final models = snapshot.data!;
             return ListView.builder(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-              itemCount: models.length,
+              itemCount: 10,
               itemBuilder: (context, index) {
                 final model = models[index];
                 return Container(

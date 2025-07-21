@@ -11,4 +11,5 @@ class ColorsManager {
   static final Color simpleGrey = Color(0xFF616161);
   static final Color homeScreenBrandBackground = Color(0xFFF4F8FF);
   static final Color lightblack = Color(0xFF242424);
+  static final Color lightRed = Color.fromARGB(31, 206, 3, 3);
 }
