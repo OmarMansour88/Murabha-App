@@ -8,4 +8,5 @@ class Routes {
   static const String applicationForm = '/applicationForm';
   static const String notificationListScreen = '/notificationListScreen';
   static const String carDetailsScreen = '/CarDetails';
+  static const String profileScreen = '/profileScreen';
 }

@@ -13,6 +13,7 @@ import 'package:murabha_app/features/login/ui/otp/otp_screen.dart';
 import 'package:murabha_app/features/notification_list/ui/notify_list_screen.dart';
 import 'package:murabha_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:murabha_app/features/carList/ui/list_of_car_screen.dart';
+import 'package:murabha_app/features/profile/ui/profile_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -46,6 +47,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => NotificationListScreen());
       case Routes.carDetailsScreen:
         return MaterialPageRoute(builder: (_) => CarDetails());
+      case Routes.profileScreen:
+        return MaterialPageRoute(builder: (_) => ProfileScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
