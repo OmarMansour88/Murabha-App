@@ -74,9 +74,6 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                         reverseTransitionDuration: Duration.zero,
                       ),
                     );
-                    // setState(() {
-                    //   for (int i = 0; i < chosenIndex.length; i++) {}
-                    // });
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
@@ -86,7 +83,6 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                     ),
                   ),
                 ),
-                // if (centerLocations.contains(fabLocation)) const Spacer(),
                 IconButton(
                   color: chosenIndex[1]
                       ? Colors.white
@@ -102,15 +98,6 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                         reverseTransitionDuration: Duration.zero,
                       ),
                     );
-                    // setState(() {
-                    //   for (int i = 0; i < chosenIndex.length; i++) {
-                    //     if (i == 1) {
-                    //       chosenIndex[i] = true;
-                    //     } else {
-                    //       chosenIndex[i] = false;
-                    //     }
-                    //   }
-                    // });
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
@@ -120,25 +107,13 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                     ),
                   ),
                 ),
-                // Container(width: 48.w, child: const SizedBox.shrink()),
                 IconButton(
                   color: chosenIndex[2]
                       ? Colors.white
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
                   icon: const Icon(Icons.paste_rounded),
-                  onPressed: () {
-                    // setState(() {
-                    //   for (int i = 0; i < chosenIndex.length; i++) {
-                    //     if (i == 2) {
-                    //       chosenIndex[i] = true;
-                    //     } else {
-                    //       chosenIndex[i] = false;
-                    //     }
-                    //   }
-                    //   print(chosenIndex);
-                    // });
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
                       chosenIndex[2]
@@ -152,7 +127,8 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                       ? Colors.white
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
-                  icon: const Icon(Icons.account_circle_outlined),
+
+                  icon: const Icon(Icons.settings),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                       PageRouteBuilder(
