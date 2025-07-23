@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
 import 'package:murabha_app/features/home/ui/home_screen.dart';
+import 'package:murabha_app/features/my_application/ui/my_application.dart';
 import 'package:murabha_app/features/profile/ui/profile_screen.dart';
 
 class AppUniversalBottomNavBar extends StatefulWidget {
@@ -113,7 +114,16 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
                   icon: const Icon(Icons.paste_rounded),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            MyApplications(),
+                        transitionDuration: Duration.zero,
+                        reverseTransitionDuration: Duration.zero,
+                      ),
+                    );
+                  },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
                       chosenIndex[2]

@@ -27,28 +27,26 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
 
-
           // Scrollable content
           SingleChildScrollView(
             child: Column(
               children: [
                 // SizedBox(height: 20.h),
-                VerticalSpacing(20.h),
+                VerticalSpacing(90.h),
 
-            // Scrollable content
-       
-//                   SizedBox(height: 20.h),
-//                   Padding(
-//                     padding: EdgeInsets.only(left: 20.w),
-//                     child: Align(
-//                       alignment: Alignment.centerLeft,
-//                       child: Text(
-//                         "MuraBaha",
-//                         style: TextStyleManager.font20BlackRegular,
-//                       ),
-//                     ),
-//                   ),
+                // Scrollable content
 
+                //                   SizedBox(height: 20.h),
+                //                   Padding(
+                //                     padding: EdgeInsets.only(left: 20.w),
+                //                     child: Align(
+                //                       alignment: Alignment.centerLeft,
+                //                       child: Text(
+                //                         "MuraBaha",
+                //                         style: TextStyleManager.font20BlackRegular,
+                //                       ),
+                //                     ),
+                //                   ),
 
                 // Padding(
                 //   padding: EdgeInsets.only(left: 20.w),
@@ -64,7 +62,7 @@ class ProfileScreen extends StatelessWidget {
                 //     ),
                 //   ),
                 // ),
-                SizedBox(height: 30.h),
+                // SizedBox(height: 70.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: const ProfileHeader(),
