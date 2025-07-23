@@ -89,8 +89,6 @@ class RatingAndFeedbackScreen extends StatelessWidget {
                 text: 'Submit',
                 backgroundColor: ColorsManager.primaryColor,
                 borderRadius: 12.r,
-                horizontalPadding: 40.w,
-                verticalPadding: 12.h,
               ),
             ],
           ),
