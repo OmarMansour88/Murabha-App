@@ -94,4 +94,9 @@ class TextStyleManager {
     color: Colors.black,
     fontWeight: FontWeightManager.bold,
   );
+  static TextStyle font20BlackRegular = TextStyle(
+    fontSize: 20.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.regular,
+  );
 }

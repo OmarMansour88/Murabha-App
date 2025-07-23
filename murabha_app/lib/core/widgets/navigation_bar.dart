@@ -127,6 +127,7 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                       ? Colors.white
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
+
                   icon: const Icon(Icons.settings),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(

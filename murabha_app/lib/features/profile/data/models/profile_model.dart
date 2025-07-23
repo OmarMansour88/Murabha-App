@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
+import 'package:murabha_app/core/themes/text_style_manager.dart';
 
 class ProfileModel extends StatelessWidget {
   final IconData icon;
@@ -39,7 +40,8 @@ class ProfileModel extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 14.sp, color: Colors.black),
+                  style: TextStyleManager.font14BlackRegular,
+                  // style: TextStyle(fontSize: 14.sp, color: Colors.black),
                 ),
               ),
               Icon(Icons.chevron_right, size: 24.sp, color: Colors.grey[700]),
