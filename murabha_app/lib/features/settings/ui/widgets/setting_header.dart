@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 
-class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({super.key});
+class SettingHeader extends StatelessWidget {
+  const SettingHeader({super.key});
 
   @override
   Widget build(BuildContext context) {

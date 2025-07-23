@@ -5,13 +5,12 @@ import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
-import 'package:murabha_app/features/profile/ui/widgets/profile_header.dart';
-import 'package:murabha_app/features/profile/ui/widgets/profile_options.dart';
+import 'package:murabha_app/features/settings/ui/widgets/setting_header.dart';
+import 'package:murabha_app/features/settings/ui/widgets/setting_options.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class SettingScreen extends StatelessWidget {
+  const SettingScreen({super.key});
 
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,42 +31,11 @@ class ProfileScreen extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: [
-                // SizedBox(height: 20.h),
                 VerticalSpacing(20.h),
-
-            // Scrollable content
-       
-//                   SizedBox(height: 20.h),
-//                   Padding(
-//                     padding: EdgeInsets.only(left: 20.w),
-//                     child: Align(
-//                       alignment: Alignment.centerLeft,
-//                       child: Text(
-//                         "MuraBaha",
-//                         style: TextStyleManager.font20BlackRegular,
-//                       ),
-//                     ),
-//                   ),
-
-
-                // Padding(
-                //   padding: EdgeInsets.only(left: 20.w),
-                //   child: Align(
-                //     alignment: Alignment.centerLeft,
-                //     child: Text(
-                //       "MuraBaha",
-                //       style: TextStyle(
-                //         fontSize: 20.sp,
-                //         color: Colors.white,
-                //         fontWeight: FontWeight.w400,
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 SizedBox(height: 30.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: const ProfileHeader(),
+                  child: const SettingHeader(),
                 ),
 
                 SizedBox(height: 20.h),
@@ -81,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                       top: Radius.circular(12.r),
                     ),
                   ),
-                  child: const ProfileOptions(),
+                  child: const SettingOptions(),
                 ),
               ],
             ),

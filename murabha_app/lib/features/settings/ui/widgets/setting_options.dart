@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:murabha_app/features/profile/data/models/profile_model.dart';
+import 'package:murabha_app/features/settings/data/models/setting_model.dart';
 
-class ProfileOptions extends StatelessWidget {
-  const ProfileOptions({super.key});
+class SettingOptions extends StatelessWidget {
+  const SettingOptions({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ProfileOptions extends StatelessWidget {
       shrinkWrap: true,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
       children: [
-        ProfileModel(
+        SettingModel(
           icon: Icons.shopping_bag_outlined,
           title: 'My Purchases',
           onTap: () {
@@ -19,7 +19,7 @@ class ProfileOptions extends StatelessWidget {
           },
         ),
         SizedBox(height: 12.h),
-        ProfileModel(
+        SettingModel(
           icon: Icons.star_rate_outlined,
           title: 'Rating & Feedback',
           onTap: () {
@@ -27,7 +27,7 @@ class ProfileOptions extends StatelessWidget {
           },
         ),
         SizedBox(height: 12.h),
-        ProfileModel(
+        SettingModel(
           icon: Icons.description_outlined,
           title: 'Terms & Conditions',
           onTap: () {
@@ -35,7 +35,7 @@ class ProfileOptions extends StatelessWidget {
           },
         ),
         SizedBox(height: 12.h),
-        ProfileModel(
+        SettingModel(
           icon: Icons.privacy_tip_outlined,
           title: 'Privacy & Policies',
           onTap: () {
@@ -43,7 +43,7 @@ class ProfileOptions extends StatelessWidget {
           },
         ),
         SizedBox(height: 12.h),
-        ProfileModel(
+        SettingModel(
           icon: Icons.language_outlined,
           title: 'Language',
           onTap: () {
@@ -51,7 +51,7 @@ class ProfileOptions extends StatelessWidget {
           },
         ),
         SizedBox(height: 12.h),
-        ProfileModel(
+        SettingModel(
           icon: Icons.logout_outlined,
           title: 'Logout',
           onTap: () {
