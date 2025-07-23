@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
 import 'package:murabha_app/features/home/ui/home_screen.dart';
+import 'package:murabha_app/features/profile/ui/profile_screen.dart';
 
 class AppUniversalBottomNavBar extends StatefulWidget {
   final int? index;
@@ -73,9 +74,6 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                         reverseTransitionDuration: Duration.zero,
                       ),
                     );
-                    // setState(() {
-                    //   for (int i = 0; i < chosenIndex.length; i++) {}
-                    // });
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
@@ -85,7 +83,6 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                     ),
                   ),
                 ),
-                // if (centerLocations.contains(fabLocation)) const Spacer(),
                 IconButton(
                   color: chosenIndex[1]
                       ? Colors.white
@@ -101,15 +98,6 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                         reverseTransitionDuration: Duration.zero,
                       ),
                     );
-                    // setState(() {
-                    //   for (int i = 0; i < chosenIndex.length; i++) {
-                    //     if (i == 1) {
-                    //       chosenIndex[i] = true;
-                    //     } else {
-                    //       chosenIndex[i] = false;
-                    //     }
-                    //   }
-                    // });
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
@@ -119,25 +107,13 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                     ),
                   ),
                 ),
-                // Container(width: 48.w, child: const SizedBox.shrink()),
                 IconButton(
                   color: chosenIndex[2]
                       ? Colors.white
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
                   icon: const Icon(Icons.paste_rounded),
-                  onPressed: () {
-                    // setState(() {
-                    //   for (int i = 0; i < chosenIndex.length; i++) {
-                    //     if (i == 2) {
-                    //       chosenIndex[i] = true;
-                    //     } else {
-                    //       chosenIndex[i] = false;
-                    //     }
-                    //   }
-                    //   print(chosenIndex);
-                    // });
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
                       chosenIndex[2]
@@ -151,8 +127,17 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                       ? Colors.white
                       : ColorsManager.primaryColor,
                   tooltip: 'Favorite',
-                  icon: const Icon(Icons.account_circle_outlined),
-                  onPressed: () {},
+                  icon: const Icon(Icons.settings),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            ProfileScreen(),
+                        transitionDuration: Duration.zero,
+                        reverseTransitionDuration: Duration.zero,
+                      ),
+                    );
+                  },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
                       chosenIndex[3]

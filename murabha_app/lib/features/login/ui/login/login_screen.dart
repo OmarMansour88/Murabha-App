@@ -52,15 +52,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         .currentState!
                         .validate()) {
                       // context.read<LoginCubit>().emitLoginState();
-                      // context.pushNamed(Routes.otpScreen);
-                      context.read<LoginCubit>().emitLoginState(
-                        LoginRequestBody(
-                          accountId: context
-                              .read<LoginCubit>()
-                              .emailController
-                              .text,
-                        ),
-                      );
+                      context.pushNamed(Routes.otpScreen);
+                      // context.read<LoginCubit>().emitLoginState(
+                      //   LoginRequestBody(
+                      //     accountId: context
+                      //         .read<LoginCubit>()
+                      //         .emailController
+                      //         .text,
+                      //   ),
+                      // );
                     }
                   },
                   text: "Sign In",
