@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 
@@ -10,7 +12,7 @@ class SettingHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Handle profile header tap
+       context.pushNamed(Routes.profileScreen); // Assuming you have a named route for the profile screen
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),

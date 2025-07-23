@@ -9,4 +9,5 @@ class Routes {
   static const String notificationListScreen = '/notificationListScreen';
   static const String carDetailsScreen = '/CarDetails';
   static const String settingsScreen = '/settingsScreen';
+  static const String profileScreen = '/profileScreen';
 }
