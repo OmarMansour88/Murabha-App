@@ -22,71 +22,78 @@ class RatingAndFeedbackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Rating and Feedback')),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            const Text(
-              'How was your experience?',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            VerticalSpacing(20.h),
-            RatingBar.builder(
-              initialRating: rating,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-              itemBuilder: (context, _) =>
-                  const Icon(Icons.star, color: Colors.amber),
-              onRatingUpdate: onRatingChanged ?? (val) {}, // 👈 fallback
-            ),
-            VerticalSpacing(20.h),
-            AppUniversaltextField(
-              controller: feedbackController,
-              text: 'Write your feedback here...',
-              isObscureText: false,
-              filledColor: Colors.grey[100],
-              borderRadius: 12,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your feedback';
-                }
-                return null;
-              },
-            ),
-            VerticalSpacing(20.h),
-            AppUniversalButton(
-              onPressed: () {
-                final feedback = feedbackController?.text.trim() ?? '';
-                print('Rating: $rating');
-                print('Feedback: $feedback');
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text('Thank you!'),
-                    content: const Text('Thank you for your feedback!'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: Text(
-                          'OK',
-                          style: TextStyleManager.font12PrimaryColorRegular,
+      appBar: AppBar(
+        title: Text('Rating & Feedback'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(15.sp),
+          child: Column(
+            children: [
+              Text(
+                'How was your experience?',
+                style: TextStyleManager.font16BlackBold,
+              ),
+              VerticalSpacing(20.h),
+              RatingBar.builder(
+                initialRating: rating,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.h),
+                itemBuilder: (context, _) =>
+                    Icon(Icons.star, color: Colors.amber),
+                onRatingUpdate: onRatingChanged ?? (val) {}, // 👈 fallback
+              ),
+              VerticalSpacing(20.h),
+              AppUniversaltextField(
+                controller: feedbackController,
+                text: 'Write your feedback here...',
+                isObscureText: false,
+                filledColor: Colors.grey[100],
+                borderRadius: 12.r,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your feedback';
+                  }
+                  return null;
+                },
+              ),
+              VerticalSpacing(20.h),
+              AppUniversalButton(
+                onPressed: () {
+                  final feedback = feedbackController?.text.trim() ?? '';
+                  print('Rating: $rating');
+                  print('Feedback: $feedback');
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text('Thank you!'),
+                      content: const Text('Thank you for your feedback!'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: Text(
+                            'OK',
+                            style: TextStyleManager.font12PrimaryColorRegular,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-              text: 'Submit',
-              backgroundColor: ColorsManager.primaryColor,
-              borderRadius: 12,
-              horizontalPadding: 40.w,
-              verticalPadding: 12.h,
-            ),
-          ],
+                      ],
+                    ),
+                  );
+                },
+                text: 'Submit',
+                backgroundColor: ColorsManager.primaryColor,
+                borderRadius: 12.r,
+                horizontalPadding: 40.w,
+                verticalPadding: 12.h,
+              ),
+            ],
+          ),
         ),
       ),
     );
