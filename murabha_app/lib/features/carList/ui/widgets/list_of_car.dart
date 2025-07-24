@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
 import 'package:murabha_app/features/carList/data/models/car_model.dart'; // includes CarModel too
@@ -51,33 +53,38 @@ class _ListOfCarState extends State<ListOfCar> {
               itemCount: 10,
               itemBuilder: (context, index) {
                 final model = models[index];
-                return Container(
-                  margin: EdgeInsets.only(bottom: 12.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        blurRadius: 6,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: ListTile(
-                    contentPadding: EdgeInsets.all(12.w),
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        model.image.optimized,
-                        width: 60.w,
-                        height: 60.h,
-                        fit: BoxFit.cover,
-                      ),
+                return GestureDetector(
+                  onTap: () {
+                    context.pushNamed(Routes.carDetailsScreen);
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 12.h),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 6,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
                     ),
-                    title: Text(
-                      model.name,
-                      style: TextStyleManager.font12BlackRegular,
+                    child: ListTile(
+                      contentPadding: EdgeInsets.all(12.w),
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(
+                          model.image.optimized,
+                          width: 60.w,
+                          height: 60.h,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      title: Text(
+                        model.name,
+                        style: TextStyleManager.font12BlackRegular,
+                      ),
                     ),
                   ),
                 );
