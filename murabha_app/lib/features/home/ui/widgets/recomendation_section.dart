@@ -9,50 +9,61 @@ class RecomendedCars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150.h,
-      // decoration: BoxDecoration(color: Colors.red),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              width: 140.w,
-              height: 120.h,
-              decoration: BoxDecoration(
-                color: ColorsManager.homeScreenBrandBackground,
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Image.asset(
-                "assets/images/onboarding_middle_screen_car_black.png",
-                width: double.maxFinite,
-                height: double.maxFinite,
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Porche Taycan",
-                      style: TextStyleManager.font16LightBlackBold,
-                      // textAlign: TextAlign.start,
-                    ),
-                    VerticalSpacing(10.h),
-                    Text(
-                      "2023 Model - 4 Door Sedan",
-                      style: TextStyleManager.font12GreyMedium,
-                      // textAlign: TextAlign.center,
-                    ),
-                  ],
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5.h),
+      child: Container(
+        height: 150.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(7.r), // Optional: rounded corners
+          border: Border(
+            top: BorderSide(color: Colors.grey, width: 0.2.w),
+            bottom: BorderSide(color: Colors.grey, width: 0.2.w),
+            left: BorderSide(color: Colors.grey, width: 0.2.w),
+            right: BorderSide(color: Colors.grey, width: 0.2.w),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 140.w,
+                height: 120.h,
+                decoration: BoxDecoration(
+                  color: ColorsManager.homeScreenBrandBackground,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                child: Image.asset(
+                  "assets/images/onboarding_middle_screen_car_black.png",
+                  width: double.maxFinite,
+                  height: double.maxFinite,
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Porche Taycan",
+                        style: TextStyleManager.font16LightBlackBold,
+                        // textAlign: TextAlign.start,
+                      ),
+                      VerticalSpacing(10.h),
+                      Text(
+                        "2023 Model - 4 Door Sedan",
+                        style: TextStyleManager.font12GreyMedium,
+                        // textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
