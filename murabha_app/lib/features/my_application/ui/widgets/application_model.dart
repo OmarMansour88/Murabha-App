@@ -65,45 +65,43 @@ class ApplicationTileModel extends StatelessWidget {
                 // Inside the Row:
                 Container(
                   width: 150.w,
-                  child: Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        VerticalSpacing(5.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      VerticalSpacing(5.h),
 
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.paste_rounded,
-                              color: ColorsManager.primaryColor,
-                              size: 18.sp,
-                            ),
-                            HorizontalSpacing(5.w),
-                            Text(
-                              applicationNumber ?? "CA-25-84",
-                              style: TextStyleManager.font16BlackBold,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.paste_rounded,
+                            color: ColorsManager.primaryColor,
+                            size: 18.sp,
+                          ),
+                          HorizontalSpacing(5.w),
+                          Text(
+                            applicationNumber ?? "CA-25-84",
+                            style: TextStyleManager.font16BlackBold,
+                          ),
+                        ],
+                      ),
 
-                        // VerticalSpacing(5.h),
-                        Text(
-                          carName ?? "Mercedes Benz - C Class 2025",
-                          style: TextStyleManager.font14PGreyRegular,
-                          maxLines: 2, // or 1 if you only want a single line
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: true,
-                        ),
+                      // VerticalSpacing(5.h),
+                      Text(
+                        carName ?? "Mercedes Benz - C Class 2025",
+                        style: TextStyleManager.font14PGreyRegular,
+                        maxLines: 2, // or 1 if you only want a single line
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: true,
+                      ),
 
-                        VerticalSpacing(5.h),
+                      VerticalSpacing(5.h),
 
-                        Text(
-                          carPrice ?? "120000\$",
-                          style: TextStyleManager.font14PGreyRegular,
-                        ),
-                      ],
-                    ),
+                      Text(
+                        carPrice ?? "120000\$",
+                        style: TextStyleManager.font14PGreyRegular,
+                      ),
+                    ],
                   ),
                 ),
 
