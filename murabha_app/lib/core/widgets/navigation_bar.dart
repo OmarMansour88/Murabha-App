@@ -5,7 +5,6 @@ import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
 import 'package:murabha_app/features/home/ui/home_screen.dart';
 import 'package:murabha_app/features/settings/ui/setting_screen.dart';
 import 'package:murabha_app/features/my_application/ui/my_application.dart';
-import 'package:murabha_app/features/profile/ui/profile_screen.dart';
 
 class AppUniversalBottomNavBar extends StatefulWidget {
   final int? index;

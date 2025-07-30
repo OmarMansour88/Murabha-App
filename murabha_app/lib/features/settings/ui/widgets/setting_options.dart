@@ -25,6 +25,7 @@ class SettingOptions extends StatelessWidget {
           icon: Icons.star_rate_outlined,
           title: 'Rating & Feedback',
           onTap: () {
+            // Open rating screen
             context.pushNamed(Routes.ratingAndFeedbackScreen);
           },
         ),
