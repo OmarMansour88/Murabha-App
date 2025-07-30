@@ -15,6 +15,8 @@ import 'package:murabha_app/features/notification_list/ui/notify_list_screen.dar
 import 'package:murabha_app/features/onboarding/ui/onboarding_screen.dart';
 import 'package:murabha_app/features/carList/ui/list_of_car_screen.dart';
 import 'package:murabha_app/features/profile/ui/profile_screen.dart';
+import 'package:murabha_app/features/rating_and_feedback.dart/ui/rating_and_feedback_screen.dart';
+import 'package:murabha_app/features/settings/ui/setting_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -48,8 +50,12 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => NotificationListScreen());
       case Routes.carDetailsScreen:
         return MaterialPageRoute(builder: (_) => CarDetails());
+      case Routes.settingsScreen:
+        return MaterialPageRoute(builder: (_) => SettingScreen());
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => ProfileScreen());
+      case Routes.ratingAndFeedbackScreen:
+        return MaterialPageRoute(builder: (_) => RatingAndFeedbackScreen());
       case Routes.myApplicationsScreen:
         return MaterialPageRoute(builder: (_) => MyApplications());
       default:

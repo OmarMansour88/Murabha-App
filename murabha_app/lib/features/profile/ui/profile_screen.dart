@@ -1,92 +1,100 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
-import 'package:murabha_app/core/widgets/navigation_bar.dart';
-import 'package:murabha_app/features/profile/ui/widgets/profile_header.dart';
-import 'package:murabha_app/features/profile/ui/widgets/profile_options.dart';
+import 'package:murabha_app/core/widgets/app_button.dart';
+import 'package:murabha_app/core/widgets/app_textfield.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 200.h,
-            color: ColorsManager.primaryColor,
-            child: SvgPicture.asset(
-              'assets/svgs/home_screen_card_background.svg',
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          // Scrollable content
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                // SizedBox(height: 20.h),
-                VerticalSpacing(90.h),
-
-                // Scrollable content
-
-                //                   SizedBox(height: 20.h),
-                //                   Padding(
-                //                     padding: EdgeInsets.only(left: 20.w),
-                //                     child: Align(
-                //                       alignment: Alignment.centerLeft,
-                //                       child: Text(
-                //                         "MuraBaha",
-                //                         style: TextStyleManager.font20BlackRegular,
-                //                       ),
-                //                     ),
-                //                   ),
-
-                // Padding(
-                //   padding: EdgeInsets.only(left: 20.w),
-                //   child: Align(
-                //     alignment: Alignment.centerLeft,
-                //     child: Text(
-                //       "MuraBaha",
-                //       style: TextStyle(
-                //         fontSize: 20.sp,
-                //         color: Colors.white,
-                //         fontWeight: FontWeight.w400,
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                // SizedBox(height: 70.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: const ProfileHeader(),
-                ),
-
-                SizedBox(height: 20.h),
-
-                // White container with profile options
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(12.r),
-                    ),
-                  ),
-                  child: const ProfileOptions(),
-                ),
-              ],
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        title: Text('Profile'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
       ),
-      bottomNavigationBar: AppUniversalBottomNavBar(index: 3),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              VerticalSpacing(20.h),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.h),
+                  child: Text(
+                    'Name :',
+                    style: TextStyleManager.font14BlackRegular,
+                  ),
+
+                ),
+              ),
+              VerticalSpacing(5.h),
+              AppUniversaltextField(
+                maxLength: 20,
+                textFieldWidth: 350.w,
+                text: 'Mohamed Amr',
+                hintStyle: TextStyleManager.font10GreyRegular,
+                onChanged: (value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
+                },
+                isObscureText: false,
+                horizontalPadding: 20.h,
+              ),
+              VerticalSpacing(20.h),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.h),
+                  child: Text(
+                    'Phone :',
+                    style: TextStyleManager.font14BlackRegular,
+                  ),
+                ),
+              ),
+              VerticalSpacing(5.h),
+              AppUniversaltextField(
+                textFieldWidth: 350.w,
+                maxLength: 13,
+                text: '+20 123 456 7890',
+                hintStyle: TextStyleManager.font10GreyRegular,
+                onChanged: (value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your phone number';
+                  }
+                  return null;
+                },
+                isObscureText: false,
+                horizontalPadding: 20.h,
+                // verticalPadding: 20.0.w,
+              ),
+              VerticalSpacing(20.h),
+              AppUniversalButton(
+                onPressed: () {
+                  // Handle save action
+                },
+                text: 'Save',
+                backgroundColor: ColorsManager.primaryColor,
+                borderRadius: 16.sp,
+                horizontalPadding: 20.w,
+                verticalPadding: 10.h,
+                width: 350.w,
+                height: 50.h,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

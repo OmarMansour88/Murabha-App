@@ -27,6 +27,7 @@ class AppUniversaltextField extends StatelessWidget {
   final int? maxLength;
   final FocusNode? focusNode;
   final List<TextInputFormatter>? inputFormatters;
+  final double? borderRadius;
 
   const AppUniversaltextField({
     super.key,
@@ -52,59 +53,64 @@ class AppUniversaltextField extends StatelessWidget {
     this.maxLength,
     this.inputFormatters,
     this.focusNode,
+    this.borderRadius,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      keyboardType: keyboardType ?? TextInputType.name,
-      onChanged: onChanged,
-      controller: controller,
-      focusNode: focusNode,
-      textAlign: textAlign ?? TextAlign.start,
-      maxLength: maxLength ?? 255,
-      inputFormatters: inputFormatters,
-      validator: (value) {
-        return validator(value);
-      },
-      decoration: InputDecoration(
-        isDense: true,
-        hintText: text,
-        hintStyle: hintStyle ?? TextStyleManager.font14LightGreyMedium,
-        enabledBorder:
-            enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: ColorsManager.lighterGrey),
-            ),
-        focusedBorder:
-            enabledFocusBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: ColorsManager.lightGrey),
-            ),
-        errorBorder:
-            errorBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: Colors.red),
-            ),
-        focusedErrorBorder:
-            errorFocusBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: Colors.red),
-            ),
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: horizontalPadding ?? 20.w,
-          vertical: verticalPadding ?? 15.h,
+    return SizedBox(
+      width:
+          textFieldWidth ??
+          double.infinity, // ✅ This line enables width control
+      height: textFieldHeight, // ✅ This line enables height control (optional)
+      child: TextFormField(
+        keyboardType: keyboardType ?? TextInputType.name,
+        onChanged: onChanged,
+        controller: controller,
+        focusNode: focusNode,
+        textAlign: textAlign ?? TextAlign.start,
+        maxLength: maxLength ?? 255,
+        inputFormatters: inputFormatters,
+        validator: (value) => validator(value),
+        decoration: InputDecoration(
+          isDense: true,
+          hintText: text,
+          hintStyle: hintStyle ?? TextStyleManager.font14LightGreyMedium,
+          enabledBorder:
+              enabledBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(borderRadius ?? 10.r),
+                borderSide: BorderSide(color: ColorsManager.lighterGrey),
+              ),
+          focusedBorder:
+              enabledFocusBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: ColorsManager.lightGrey),
+              ),
+          errorBorder:
+              errorBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Colors.red),
+              ),
+          focusedErrorBorder:
+              errorFocusBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Colors.red),
+              ),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: horizontalPadding ?? 20.w,
+            vertical: verticalPadding ?? 15.h,
+          ),
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon,
+          fillColor: filledColor ?? ColorsManager.moreLighterGrey,
+          filled: true,
         ),
-        suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
-        fillColor: filledColor ?? ColorsManager.moreLighterGrey,
-        filled: true,
+        obscureText: isObscureText,
       ),
-      obscureText: isObscureText,
     );
   }
 }

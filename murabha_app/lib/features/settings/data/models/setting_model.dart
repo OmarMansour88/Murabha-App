@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 
-class ProfileModel extends StatelessWidget {
+class SettingModel extends StatelessWidget {
   final IconData icon;
   final String title;
   final VoidCallback onTap;
 
-  const ProfileModel({
+  const SettingModel({
     super.key,
     required this.icon,
     required this.title,
