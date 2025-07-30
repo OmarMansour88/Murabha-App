@@ -31,6 +31,7 @@ class ProfileScreen extends StatelessWidget {
                     'Name :',
                     style: TextStyleManager.font14BlackRegular,
                   ),
+
                 ),
               ),
               VerticalSpacing(5.h),
