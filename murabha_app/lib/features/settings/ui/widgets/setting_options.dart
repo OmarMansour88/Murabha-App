@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/extensions.dart';
+import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/features/settings/data/models/setting_model.dart';
 
 class SettingOptions extends StatelessWidget {
@@ -24,6 +26,7 @@ class SettingOptions extends StatelessWidget {
           title: 'Rating & Feedback',
           onTap: () {
             // Open rating screen
+            context.pushNamed(Routes.ratingAndFeedbackScreen);
           },
         ),
         SizedBox(height: 12.h),
