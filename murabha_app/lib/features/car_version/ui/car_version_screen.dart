@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:murabha_app/core/helpers/extensions.dart';
-import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/features/car_version/cubit/car_versions_cubit_cubit.dart';
+import 'package:murabha_app/features/car_version/ui/widgets/car_grid_version.dart';
+import 'package:murabha_app/features/car_version/ui/widgets/car_listview_version';
+import 'package:murabha_app/features/car_version/ui/widgets/filters/filter_bottom_sheet.dart';
 import 'package:murabha_app/features/car_version/ui/widgets/sort_filter_button.dart';
 
 class CarVersionScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class CarVersionScreen extends StatefulWidget {
 class _CarVersionScreenState extends State<CarVersionScreen> {
   String sortBy = 'year';
   bool ascending = true;
+  bool isGridView = false;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,10 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
         backgroundColor: ColorsManager.primaryColor,
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
-          title: Text(fakeCarName, style: TextStyleManager.font18WhiteMedium),
+          title: Text(
+            'Car Versions',
+            style: TextStyleManager.font18WhiteMedium,
+          ),
           backgroundColor: ColorsManager.primaryColor,
           centerTitle: true,
           elevation: 0,
@@ -68,67 +73,95 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
                               "Versions",
                               style: TextStyleManager.font18BlackSemiBold,
                             ),
+                            Row(
+                              children: [
+                                SortFilterButton(
+                                  icon: Icons.sort,
+                                  title: "Sort By",
+                                  onPressed: () {
+                                    // Your sorting logic here
+                                  },
+                                ),
+                                SizedBox(width: 8.w),
+                                SortFilterButton(
+                                  icon: Icons.filter_alt_outlined,
+                                  title: "Filters",
+                                  onPressed: () {
+                                    showModalBottomSheet(
+                                      context: context,
+                                      isScrollControlled: true,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(20.r),
+                                        ),
+                                      ),
+                                      builder: (_) => const FilterBottomSheet(),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 2.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              icon: Icon(
+                                Icons.list,
+                                color: !isGridView ? Colors.black : Colors.grey,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  isGridView = false;
+                                });
+                              },
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.grid_view,
+                                color: isGridView ? Colors.black : Colors.grey,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  isGridView = true;
+                                });
+                              },
+                            ),
                           ],
                         ),
                       ),
                       Expanded(
-                        child: ListView.builder(
-                          itemCount: versions.length,
-                          itemBuilder: (context, index) {
-                            final version = versions[index];
-                            final Color backgroundColor = index.isEven
-                                ? ColorsManager.lighterGrey
-                                : Colors.white;
-
-                            return GestureDetector(
-                              onTap: () {
-                                context.pushNamed(Routes.carDetailsScreen);
-                              },
-                              child: Container(
-                                color: backgroundColor,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 14.w,
-                                  horizontal: 14.h,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: ColorsManager.lightGrey,
-                                        borderRadius: BorderRadius.circular(
-                                          6.r,
-                                        ),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/onboarding_middle_screen_car_option1_1_2.png',
-                                        width: 130.w,
-                                        height: 90.h,
-                                        fit: BoxFit.contain,
-                                      ),
+                        child: isGridView
+                            ? GridView.builder(
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 1,
+                                      childAspectRatio: (1.045).h,
+                                      crossAxisSpacing: 12.w,
+                                      mainAxisSpacing: 13.h,
                                     ),
-                                    const SizedBox(width: 16),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Year: ${version.year}",
-                                            style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 4),
-                                          Text("Price: \$${version.price}"),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                itemCount: versions.length,
+                                itemBuilder: (context, index) {
+                                  final version = versions[index];
+                                  return CarGridVersion(version: version);
+                                },
+                              )
+                            : ListView.builder(
+                              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                                itemCount: versions.length,
+                                itemBuilder: (context, index) {
+                                  final version = versions[index];
+                                  return CarListVersionItem(
+                                    version: version,
+                                    isEven: index.isEven,
+                                  );
+                                },
                               ),
-                            );
-                          },
-                        ),
                       ),
                     ],
                   ),

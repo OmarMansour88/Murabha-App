@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ColorsManager {
@@ -12,4 +13,6 @@ class ColorsManager {
   static final Color homeScreenBrandBackground = Color(0xFFF4F8FF);
   static final Color lightblack = Color(0xFF242424);
   static final Color lightRed = Color.fromARGB(31, 206, 3, 3);
+  static final Color grey100 = Colors.grey[100]!;
+  static final Color green = Color.fromARGB(255, 17, 179, 23);
 }

@@ -99,4 +99,29 @@ class TextStyleManager {
     color: Colors.black,
     fontWeight: FontWeightManager.regular,
   );
+  static TextStyle font14WhiteRegular = TextStyle(
+    fontSize: 14.sp,
+    color: Colors.white,
+    fontWeight: FontWeightManager.regular,
+  );
+  static TextStyle font14RedBold = TextStyle(
+    fontSize: 14.sp,
+    color: Colors.red,
+    fontWeight: FontWeightManager.bold,
+  );
+  static TextStyle font14BlackBold = TextStyle(
+    fontSize: 14.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.bold,
+  );
+  static TextStyle font18BlackBold = TextStyle(
+    fontSize: 18.sp,
+    color: Colors.black,
+    fontWeight: FontWeightManager.bold,
+  );
+  static TextStyle font18GreenBold = TextStyle(
+    fontSize: 18.sp,
+    color: ColorsManager.green,
+    fontWeight: FontWeightManager.bold,
+  );
 }
