@@ -5,23 +5,19 @@ import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
-import 'package:murabha_app/features/car_version/models/version_model.dart';
 import 'package:murabha_app/core/helpers/extensions.dart';
+import 'package:murabha_app/features/car_version/data/models/car_version.dart';
 
 class CarListVersion extends StatelessWidget {
-  final VersionModel version;
+  final CarVersion version;
   final bool isEven;
 
-  const CarListVersion({
-    Key? key,
-    required this.version,
-    required this.isEven,
-  }) : super(key: key);
+  const CarListVersion({Key? key, required this.version, required this.isEven})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor =
-        isEven ? ColorsManager.grey100 : Colors.white;
+    final backgroundColor = isEven ? ColorsManager.grey100 : Colors.white;
 
     return GestureDetector(
       onTap: () {
@@ -29,10 +25,7 @@ class CarListVersion extends StatelessWidget {
       },
       child: Container(
         color: backgroundColor,
-        padding: EdgeInsets.symmetric(
-          vertical: 14.w,
-          horizontal: 14.h,
-        ),
+        padding: EdgeInsets.symmetric(vertical: 14.w, horizontal: 14.h),
         child: Row(
           children: [
             Container(
@@ -66,9 +59,19 @@ class CarListVersion extends StatelessWidget {
                     style: TextStyleManager.font12BlackRegular,
                   ),
                   VerticalSpacing(6.h),
-                  Text(
-                    '\$${AppFormatters.formatPrice(version.price)}',
-                    style: TextStyleManager.font14BlackBold,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // MainAxisAlignment.spaceBetween,
+                      Text(
+                        '\$${AppFormatters.formatPrice(version.price)}',
+                        style: TextStyleManager.font14BlackBold,
+                      ),
+                      Text(
+                        '\$${AppFormatters.formatPrice(10000)}/mo',
+                        style: TextStyleManager.font14GreenBold,
+                      ),
+                    ],
                   ),
                 ],
               ),

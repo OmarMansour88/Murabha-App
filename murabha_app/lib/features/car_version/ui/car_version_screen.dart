@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/features/car_version/cubit/car_versions_cubit_cubit.dart';
 import 'package:murabha_app/features/car_version/ui/widgets/car_grid_version.dart';
-import 'package:murabha_app/features/car_version/ui/widgets/car_listview_version';
+import 'package:murabha_app/features/car_version/ui/widgets/car_listview_version.dart';
 import 'package:murabha_app/features/car_version/ui/widgets/filters/filter_bottom_sheet.dart';
 import 'package:murabha_app/features/car_version/ui/widgets/sort_filter_button.dart';
 
@@ -25,7 +26,6 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
   Widget build(BuildContext context) {
     // You can change this slug to test different mock data
     const String fakeSlug = 'toyota-corolla';
-    const String fakeCarName = 'Toyota';
 
     return BlocProvider(
       create: (_) => CarVersionsCubit()..loadVersions(fakeSlug),
@@ -82,7 +82,7 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
                                     // Your sorting logic here
                                   },
                                 ),
-                                SizedBox(width: 8.w),
+                                HorizontalSpacing(8.w),
                                 SortFilterButton(
                                   icon: Icons.filter_alt_outlined,
                                   title: "Filters",
@@ -90,11 +90,6 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
                                     showModalBottomSheet(
                                       context: context,
                                       isScrollControlled: true,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                          top: Radius.circular(20.r),
-                                        ),
-                                      ),
                                       builder: (_) => const FilterBottomSheet(),
                                     );
                                   },
@@ -104,32 +99,46 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
                           ],
                         ),
                       ),
+
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 2.h),
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            IconButton(
-                              icon: Icon(
-                                Icons.list,
-                                color: !isGridView ? Colors.black : Colors.grey,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  isGridView = false;
-                                });
-                              },
+                            Text(
+                              "Total Cars: 10",
+                              style: TextStyleManager.font14BlackBold,
                             ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.grid_view,
-                                color: isGridView ? Colors.black : Colors.grey,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  isGridView = true;
-                                });
-                              },
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.list,
+                                    color: !isGridView
+                                        ? ColorsManager.primaryColor
+                                        : Colors.grey,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      isGridView = false;
+                                    });
+                                  },
+                                ),
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.grid_view_rounded,
+                                    color: isGridView
+                                        ? ColorsManager.primaryColor
+                                        : Colors.grey,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      isGridView = true;
+                                    });
+                                  },
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -152,11 +161,14 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
                                 },
                               )
                             : ListView.builder(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 8.h,
+                                ),
                                 itemCount: versions.length,
                                 itemBuilder: (context, index) {
                                   final version = versions[index];
-                                  return CarListVersionItem(
+                                  return CarListVersion(
                                     version: version,
                                     isEven: index.isEven,
                                   );

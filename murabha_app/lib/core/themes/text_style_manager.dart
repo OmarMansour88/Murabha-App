@@ -124,4 +124,9 @@ class TextStyleManager {
     color: ColorsManager.green,
     fontWeight: FontWeightManager.bold,
   );
+    static TextStyle font14GreenBold = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsManager.green,
+    fontWeight: FontWeightManager.bold,
+  );
 }
