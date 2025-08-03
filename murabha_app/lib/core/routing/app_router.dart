@@ -5,6 +5,7 @@ import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
 import 'package:murabha_app/features/car_application/ui/application_form.dart';
 import 'package:murabha_app/features/car_details/ui/car_details.dart';
+import 'package:murabha_app/features/car_version/ui/car_version_screen.dart';
 import 'package:murabha_app/features/home/ui/home_Screen.dart';
 import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_cubit.dart';
 import 'package:murabha_app/features/login/logic/otp/cubit/otp_cubit.dart';
@@ -58,6 +59,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => RatingAndFeedbackScreen());
       case Routes.myApplicationsScreen:
         return MaterialPageRoute(builder: (_) => MyApplications());
+      case Routes.carVersionScreen:
+        return MaterialPageRoute(builder: (_) => CarVersionScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
