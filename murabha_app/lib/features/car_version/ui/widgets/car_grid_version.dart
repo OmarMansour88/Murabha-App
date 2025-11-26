@@ -22,7 +22,7 @@ class CarGridVersion extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(color: ColorsManager.lightGrey),
+          border: Border.all(color: ColorsManager.lighterGrey),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +32,7 @@ class CarGridVersion extends StatelessWidget {
               height: 155.h,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: ColorsManager.lightGrey,
+                color: ColorsManager.moreLighterGrey,
                 borderRadius: BorderRadius.circular(8.r),
               ),
               child: ClipRRect(

@@ -23,61 +23,70 @@ class CarListVersion extends StatelessWidget {
       onTap: () {
         context.pushNamed(Routes.carDetailsScreen);
       },
-      child: Container(
-        color: backgroundColor,
-        padding: EdgeInsets.symmetric(vertical: 14.w, horizontal: 14.h),
-        child: Row(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: ColorsManager.lightGrey,
-                borderRadius: BorderRadius.circular(6.r),
-              ),
-              child: Image.asset(
-                'assets/images/onboarding_middle_screen_car_option1_1_2.png',
-                width: 130.w,
-                height: 90.h,
-                fit: BoxFit.contain,
-              ),
+      child: Column(
+        children: [
+          VerticalSpacing(10.h),
+          Container(
+            // color: backgroundColor,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.r),
+              border: Border.all(color: ColorsManager.lighterGrey),
             ),
-            HorizontalSpacing(16.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Toyota Corolla',
-                    style: TextStyleManager.font16BlackBold,
+            padding: EdgeInsets.symmetric(vertical: 14.w, horizontal: 14.h),
+            child: Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: ColorsManager.moreLighterGrey,
+                    borderRadius: BorderRadius.circular(6.r),
                   ),
-                  VerticalSpacing(4.h),
-                  Text(
-                    "Year: ${version.year}",
-                    style: TextStyleManager.font12BlackRegular,
+                  child: Image.asset(
+                    'assets/images/onboarding_middle_screen_car_option1_1_2.png',
+                    width: 130.w,
+                    height: 90.h,
+                    fit: BoxFit.contain,
                   ),
-                  Text(
-                    "${AppFormatters.formatKilometers(version.kilometer)} KM | ${version.category}",
-                    style: TextStyleManager.font12BlackRegular,
-                  ),
-                  VerticalSpacing(6.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                ),
+                HorizontalSpacing(16.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // MainAxisAlignment.spaceBetween,
                       Text(
-                        '\$${AppFormatters.formatPrice(version.price)}',
-                        style: TextStyleManager.font14BlackBold,
+                        'Toyota Corolla',
+                        style: TextStyleManager.font16BlackBold,
+                      ),
+                      VerticalSpacing(4.h),
+                      Text(
+                        "Year: ${version.year}",
+                        style: TextStyleManager.font12BlackRegular,
                       ),
                       Text(
-                        '\$${AppFormatters.formatPrice(10000)}/mo',
-                        style: TextStyleManager.font14GreenBold,
+                        "${AppFormatters.formatKilometers(version.kilometer)} KM | ${version.category}",
+                        style: TextStyleManager.font12BlackRegular,
+                      ),
+                      VerticalSpacing(6.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // MainAxisAlignment.spaceBetween,
+                          Text(
+                            '\$${AppFormatters.formatPrice(version.price)}',
+                            style: TextStyleManager.font14BlackBold,
+                          ),
+                          Text(
+                            '\$${AppFormatters.formatPrice(10000)}/mo',
+                            style: TextStyleManager.font14GreenBold,
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

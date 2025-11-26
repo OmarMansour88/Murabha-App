@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Toyota",
+    "slug": "toyota",
+    "origin": "Japan",
+    "founded": 1937,
+    "description": "Toyota is a Japanese multinational automotive manufacturer known for reliability and innovation.",
+    "popular_models": ["Corolla", "Camry", "RAV4"],
+    "website": "https://www.toyota.com",
+    "image": {
+      "source": "https://www.pngplay.com/wp-content/uploads/13/BMW-X5-Background-PNG.png",
+      "thumb": "https://www.pngplay.com/wp-content/uploads/13/BMW-X5-Background-PNG.png",
+      "optimized": "https://www.pngplay.com/wp-content/uploads/13/BMW-X5-Background-PNG.png",
+      "original": "https://www.pngplay.com/wp-content/uploads/13/BMW-X5-Background-PNG.png",
+      "localThumb": "./thumb/toyota.png",
+      "localOptimized": "./optimized/toyota.png",
+      "localOriginal": "./original/toyota.png"
+    }
+  },
+  {
+    "name": "Ford",
+    "slug": "ford",
+    "origin": "USA",
+    "founded": 1903,
+    "description": "Ford Motor Company is an American automaker known for mass-market and performance vehicles.",
+    "popular_models": ["Mustang", "F-150", "Explorer"],
+    "website": "https://www.ford.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/ford-logo-png/ford-logo-png-transparent-background-15.png",
+      "thumb": "https://freepnglogos.com/uploads/ford-logo-png/thumb/ford-logo-png-transparent-background-15.png",
+      "optimized": "https://freepnglogos.com/uploads/ford-logo-png/optimized/ford-logo-png-transparent-background-15.png",
+      "original": "https://freepnglogos.com/uploads/ford-logo-png/original/ford-logo-png-transparent-background-15.png",
+      "localThumb": "./thumb/ford.png",
+      "localOptimized": "./optimized/ford.png",
+      "localOriginal": "./original/ford.png"
+    }
+  },
+  {
+    "name": "BMW",
+    "slug": "bmw",
+    "origin": "Germany",
+    "founded": 1916,
+    "description": "BMW is a German luxury vehicle manufacturer known for sporty and premium cars.",
+    "popular_models": ["3 Series", "X5", "i8"],
+    "website": "https://www.bmw.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/bmw-logo-png-transparent-background-19.png",
+      "thumb": "https://freepnglogos.com/uploads/bmw-logo-png/thumb/bmw-logo-png-transparent-background-19.png",
+      "optimized": "https://freepnglogos.com/uploads/bmw-logo-png/optimized/bmw-logo-png-transparent-background-19.png",
+      "original": "https://freepnglogos.com/uploads/bmw-logo-png/original/bmw-logo-png-transparent-background-19.png",
+      "localThumb": "./thumb/bmw.png",
+      "localOptimized": "./optimized/bmw.png",
+      "localOriginal": "./original/bmw.png"
+    }
+  },
+  {
+    "name": "Mercedes-Benz",
+    "slug": "mercedes-benz",
+    "origin": "Germany",
+    "founded": 1926,
+    "description": "Mercedes‑Benz is a German global automobile marque and a division of Daimler AG, known for luxury vehicles.",
+    "popular_models": ["C-Class", "S-Class", "GLE"],
+    "website": "https://www.mercedes-benz.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/mercedes-benz-logo-png/mercedes-benz-logo-png-transparent-background-3.png",
+      "thumb": "https://freepnglogos.com/uploads/mercedes-benz-logo-png/thumb/mercedes-benz-logo-png-transparent-background-3.png",
+      "optimized": "https://freepnglogos.com/uploads/mercedes-benz-logo-png/optimized/mercedes-benz-logo-png-transparent-background-3.png",
+      "original": "https://freepnglogos.com/uploads/mercedes-benz-logo-png/original/mercedes-benz-logo-png-transparent-background-3.png",
+      "localThumb": "./thumb/mercedes-benz.png",
+      "localOptimized": "./optimized/mercedes-benz.png",
+      "localOriginal": "./original/mercedes-benz.png"
+    }
+  },
+  {
+    "name": "Audi",
+    "slug": "audi",
+    "origin": "Germany",
+    "founded": 1910,
+    "description": "Audi is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles.",
+    "popular_models": ["A4", "Q7", "R8"],
+    "website": "https://www.audi.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/audi-logo-png-transparent-background-13.png",
+      "thumb": "https://freepnglogos.com/uploads/audi-logo-png/thumb/audi-logo-png-transparent-background-13.png",
+      "optimized": "https://freepnglogos.com/uploads/audi-logo-png/optimized/audi-logo-png-transparent-background-13.png",
+      "original": "https://freepnglogos.com/uploads/audi-logo-png/original/audi-logo-png-transparent-background-13.png",
+      "localThumb": "./thumb/audi.png",
+      "localOptimized": "./optimized/audi.png",
+      "localOriginal": "./original/audi.png"
+    }
+  },
+  {
+    "name": "Volkswagen",
+    "slug": "volkswagen",
+    "origin": "Germany",
+    "founded": 1937,
+    "description": "Volkswagen, known as VW, is a German automaker founded in 1937, making a wide range of cars.",
+    "popular_models": ["Golf", "Passat", "Tiguan"],
+      "website": "https://www.vw.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/volkswagen-logo-transparent-png-pic-1.png",
+      "thumb": "https://freepnglogos.com/uploads/volkswagen-logo-transparent-png-pic-1-thumb.png",
+      "optimized": "https://freepnglogos.com/uploads/volkswagen-logo-transparent-png-pic-1-optimized.png",
+      "original": "https://freepnglogos.com/uploads/volkswagen-logo-transparent-png-pic-1-original.png",
+      "localThumb": "./thumb/volkswagen.png",
+      "localOptimized": "./optimized/volkswagen.png",
+      "localOriginal": "./original/volkswagen.png"
+    }
+  },
+  {
+    "name": "Honda",
+    "slug": "honda",
+    "origin": "Japan",
+    "founded": 1948,
+    "description": "Honda Motor Co., Ltd. is a Japanese public multinational conglomerate known for manufacturing cars, motorcycles, and power equipment.",
+    "popular_models": ["Civic", "Accord", "CR-V"],
+    "website": "https://www.honda.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/honda-logo-png-transparent-background-8.png",
+      "thumb": "https://freepnglogos.com/uploads/honda-logo-png/thumb/honda-logo-png-transparent-background-8.png",
+      "optimized": "https://freepnglogos.com/uploads/honda-logo-png/optimized/honda-logo-png-transparent-background-8.png",
+      "original": "https://freepnglogos.com/uploads/honda-logo-png/original/honda-logo-png-transparent-background-8.png",
+      "localThumb": "./thumb/honda.png",
+      "localOptimized": "./optimized/honda.png",
+      "localOriginal": "./original/honda.png"
+    }
+  },
+  {
+    "name": "Chevrolet",
+    "slug": "chevrolet",
+    "origin": "USA",
+    "founded": 1911,
+    "description": "Chevrolet, colloquially referred to as Chevy, is an American automobile division of the American manufacturer General Motors (GM).",
+    "popular_models": ["Camaro", "Silverado", "Malibu"],
+    "website": "https://www.chevrolet.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/chevrolet-logo-png-6.png",
+      "thumb": "https://freepnglogos.com/uploads/chevrolet-logo-png-6-thumb.png",
+      "optimized": "https://freepnglogos.com/uploads/chevrolet-logo-png-6-optimized.png",
+      "original": "https://freepnglogos.com/uploads/chevrolet-logo-png-6-original.png",
+      "localThumb": "./thumb/chevrolet.png",
+      "localOptimized": "./optimized/chevrolet.png",
+      "localOriginal": "./original/chevrolet.png"
+    }
+  },
+  {
+    "name": "Nissan",
+    "slug": "nissan",
+    "origin": "Japan",
+    "founded": 1933,
+    "description": "Nissan Motor Co., Ltd. is a multinational automobile manufacturer headquartered in Yokohama, Japan.",
+    "popular_models": ["Altima", "Rogue", "GT-R"],
+    "website": "https://www.nissan-global.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/nissan-logo-png-transparent-background-5.png",
+      "thumb": "https://freepnglogos.com/uploads/nissan-logo-png/thumb/nissan-logo-png-transparent-background-5.png",
+      "optimized": "https://freepnglogos.com/uploads/nissan-logo-png/optimized/nissan-logo-png-transparent-background-5.png",
+      "original": "https://freepnglogos.com/uploads/nissan-logo-png/original/nissan-logo-png-transparent-background-5.png",
+      "localThumb": "./thumb/nissan.png",
+      "localOptimized": "./optimized/nissan.png",
+      "localOriginal": "./original/nissan.png"
+    }
+  },
+  {
+    "name": "Hyundai",
+    "slug": "hyundai",
+    "origin": "South Korea",
+    "founded": 1967,
+    "description": "Hyundai Motor Company is a South Korean multinational automotive manufacturer.",
+    "popular_models": ["Elantra", "Santa Fe", "Palisade"],
+    "website": "https://www.hyundai.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/hyundai-logo-png-transparent-9.png",
+      "thumb": "https://freepnglogos.com/uploads/hyundai-logo-png/thumb/hyundai-logo-png-transparent-9.png",
+      "optimized": "https://freepnglogos.com/uploads/hyundai-logo-png/optimized/hyundai-logo-png-transparent-9.png",
+      "original": "https://freepnglogos.com/uploads/hyundai-logo-png/original/hyundai-logo-png-transparent-9.png",
+      "localThumb": "./thumb/hyundai.png",
+      "localOptimized": "./optimized/hyundai.png",
+      "localOriginal": "./original/hyundai.png"
+    }
+  },
+  {
+    "name": "Kia",
+    "slug": "kia",
+    "origin": "South Korea",
+    "founded": 1944,
+    "description": "Kia Corporation is a South Korean multinational automotive manufacturer.",
+    "popular_models": ["Sportage", "Seltos", "Stinger"],
+    "website": "https://www.kia.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/kia-logo-png-transparent-background-1.png",
+      "thumb": "https://freepnglogos.com/uploads/kia-logo-png/thumb/kia-logo-png-transparent-background-1.png",
+      "optimized": "https://freepnglogos.com/uploads/kia-logo-png/optimized/kia-logo-png-transparent-background-1.png",
+      "original": "https://freepnglogos.com/uploads/kia-logo-png/original/kia-logo-png-transparent-background-1.png",
+      "localThumb": "./thumb/kia.png",
+      "localOptimized": "./optimized/kia.png",
+      "localOriginal": "./original/kia.png"
+    }
+  },
+  {
+    "name": "Ferrari",
+    "slug": "ferrari",
+    "origin": "Italy",
+    "founded": 1939,
+    "description": "Ferrari S.p.A. is an Italian luxury sports car manufacturer based in Maranello.",
+    "popular_models": ["488", "Portofino", "SF90"],
+    "website": "https://www.ferrari.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/ferrari-logo-png-5.png",
+      "thumb": "https://freepnglogos.com/uploads/ferrari-logo-png/thumb/ferrari-logo-png-5.png",
+      "optimized": "https://freepnglogos.com/uploads/ferrari-logo-png/optimized/ferrari-logo-png-5.png",
+      "original": "https://freepnglogos.com/uploads/ferrari-logo-png/original/ferrari-logo-png-5.png",
+      "localThumb": "./thumb/ferrari.png",
+      "localOptimized": "./optimized/ferrari.png",
+      "localOriginal": "./original/ferrari.png"
+    }
+  },
+  {
+    "name": "Lamborghini",
+    "slug": "lamborghini",
+    "origin": "Italy",
+    "founded": 1963,
+    "description": "Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs.",
+    "popular_models": ["Huracán", "Aventador", "Urus"],
+    "website": "https://www.lamborghini.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/lamborghini-logo-png-transparent-background-6.png",
+      "thumb": "https://freepnglogos.com/uploads/lamborghini-logo-png/thumb/lamborghini-logo-png-transparent-background-6.png",
+      "optimized": "https://freepnglogos.com/uploads/lamborghini-logo-png/optimized/lamborghini-logo-png-transparent-background-6.png",
+      "original": "https://freepnglogos.com/uploads/lamborghini-logo-png/original/lamborghini-logo-png-transparent-background-6.png",
+      "localThumb": "./thumb/lamborghini.png",
+      "localOptimized": "./optimized/lamborghini.png",
+      "localOriginal": "./original/lamborghini.png"
+    }
+  },
+  {
+    "name": "Porsche",
+    "slug": "porsche",
+    "origin": "Germany",
+    "founded": 1931,
+    "description": "Porsche AG is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans.",
+    "popular_models": ["911", "Cayenne", "Taycan"],
+    "website": "https://www.porsche.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/porsche-logo-png-transparent-background-13.png",
+      "thumb": "https://freepnglogos.com/uploads/porsche-logo-png/thumb/porsche-logo-png-transparent-background-13.png",
+      "optimized": "https://freepnglogos.com/uploads/porsche-logo-png/optimized/porsche-logo-png-transparent-background-13.png",
+      "original": "https://freepnglogos.com/uploads/porsche-logo-png/original/porsche-logo-png-transparent-background-13.png",
+      "localThumb": "./thumb/porsche.png",
+      "localOptimized": "./optimized/porsche.png",
+      "localOriginal": "./original/porsche.png"
+    }
+  },
+  {
+    "name": "Mazda",
+    "slug": "mazda",
+    "origin": "Japan",
+    "founded": 1920,
+    "description": "Mazda Motor Corporation is a Japanese automaker known for its rotary engines and sleek design.",
+    "popular_models": ["Mazda3", "MX-5", "CX-5"],
+    "website": "https://www.mazda.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/mazda-logo-png-transparent-background-14.png",
+      "thumb": "https://freepnglogos.com/uploads/mazda-logo-png/thumb/mazda-logo-png-transparent-background-14.png",
+      "optimized": "https://freepnglogos.com/uploads/mazda-logo-png/optimized/mazda-logo-png-transparent-background-14.png",
+      "original": "https://freepnglogos.com/uploads/mazda-logo-png/original/mazda-logo-png-transparent-background-14.png",
+      "localThumb": "./thumb/mazda.png",
+      "localOptimized": "./optimized/mazda.png",
+      "localOriginal": "./original/mazda.png"
+    }
+  },
+  {
+    "name": "Subaru",
+    "slug": "subaru",
+    "origin": "Japan",
+    "founded": 1953,
+    "description": "Subaru is the automobile manufacturing division of Subaru Corporation, known for boxer engines and all-wheel drive.",
+    "popular_models": ["Impreza", "Forester", "Outback"],
+    "website": "https://www.subaru.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/subaru-logo-png-transparent-background-4.png",
+      "thumb": "https://freepnglogos.com/uploads/subaru-logo-png/thumb/subaru-logo-png-transparent-background-4.png",
+      "optimized": "https://freepnglogos.com/uploads/subaru-logo-png/optimized/subaru-logo-png-transparent-background-4.png",
+      "original": "https://freepnglogos.com/uploads/subaru-logo-png/original/subaru-logo-png-transparent-background-4.png",
+      "localThumb": "./thumb/subaru.png",
+      "localOptimized": "./optimized/subaru.png",
+      "localOriginal": "./original/subaru.png"
+    }
+  },
+  {
+    "name": "Ferrari",
+    "slug": "ferrari-2",
+    "origin": "Italy",
+    "founded": 1939,
+    "description": "Ferrari is an Italian luxury sports car brand.",
+    "popular_models": ["488 Pista", "Roma", "SF90"],
+    "website": "https://www.ferrari.com",
+    "image": {
+      "source": "https://freepnglogos.com/uploads/ferrari-logo-png-transparent-background-5.png",
+      "thumb": "https://freepnglogos.com/uploads/ferrari-logo-png/thumb/ferrari-logo-png-transparent-background-5.png",
+      "optimized": "https://freepnglogos.com/uploads/ferrari-logo-png/optimized/ferrari-logo-png-transparent-background-5.png",
+      "original": "https://freepnglogos.com/uploads/ferrari-logo-png/original/ferrari-logo-png-5.png",
+      "localThumb": "./thumb/ferrari2.png",
+      "localOptimized": "./optimized/ferrari2.png",
+      "localOriginal": "./original/ferrari2.png"
+    }
+  }
+]

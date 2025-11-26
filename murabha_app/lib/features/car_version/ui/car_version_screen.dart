@@ -32,7 +32,7 @@ class _CarVersionScreenState extends State<CarVersionScreen> {
       child: Scaffold(
         backgroundColor: ColorsManager.primaryColor,
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
+          // iconTheme: IconThemeData(color: Colors.white),
           title: Text(
             'Car Versions',
             style: TextStyleManager.font18WhiteMedium,

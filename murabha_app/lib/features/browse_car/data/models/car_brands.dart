@@ -9,7 +9,7 @@ class CarBrand {
     return CarBrand(
       name: json['name'],
       slug: json['slug'],
-      image: ImageUrls.fromJson(json['image']),
+      image: ImageUrls.fromJson(json['logo']),
     );
   }
 }
