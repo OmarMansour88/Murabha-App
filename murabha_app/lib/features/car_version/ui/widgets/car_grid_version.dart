@@ -27,7 +27,7 @@ class CarGridVersion extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Car Image with Color Variants (from network)
+            // Car Image
             AspectRatio(
               aspectRatio: 16 / 9,
               child: Stack(
@@ -41,7 +41,7 @@ class CarGridVersion extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.r),
                       child: Image.network(
-                        version.image.main,
+                        version.image.main, // Use version.image.main
                         fit: BoxFit.cover,
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;
@@ -85,7 +85,7 @@ class CarGridVersion extends StatelessWidget {
             VerticalSpacing(8.h),
             // Car Info
             Text(
-              version.model,
+              version.model, // Use version.model
               style: TextStyleManager.font18BlackSemiBold,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -100,7 +100,7 @@ class CarGridVersion extends StatelessWidget {
                 ),
                 HorizontalSpacing(4.w),
                 Text(
-                  version.year.toString(),
+                  version.year.toString(), // Use version.year
                   style: TextStyleManager.font12GreyMedium,
                 ),
               ],
@@ -111,7 +111,7 @@ class CarGridVersion extends StatelessWidget {
                 Icon(Icons.speed, size: 14.sp, color: ColorsManager.grey),
                 HorizontalSpacing(4.w),
                 Text(
-                  '${version.horsePower} HP',
+                  '${version.horsePower} HP', // Use version.horsePower
                   style: TextStyleManager.font12GreyMedium,
                 ),
               ],
@@ -126,25 +126,15 @@ class CarGridVersion extends StatelessWidget {
                 ),
                 HorizontalSpacing(4.w),
                 Text(
-                  version.specs.fuelType,
+                  version.specs.fuelType, // Use version.specs.fuelType
                   style: TextStyleManager.font12GreyMedium,
                 ),
               ],
             ),
             VerticalSpacing(8.h),
-            // Price as string from JSON (e.g. "520,000 EGP")
+            // Price
             Text(version.price, style: TextStyleManager.font16BlackBold),
             VerticalSpacing(10.h),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     // MainAxisAlignment.spaceBetween,
-            //     Text(
-            //       '\$${AppFormatters.formatPrice(10000)}/mo',
-            //       style: TextStyleManager.font18GreenBold,
-            //     ),
-            //   ],
-            // ),
           ],
         ),
       ),

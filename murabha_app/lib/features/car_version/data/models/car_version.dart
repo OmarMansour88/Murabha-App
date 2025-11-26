@@ -1,12 +1,12 @@
+// car_version.dart
 class CarVersion {
   final int id;
   final String model;
   final int year;
   final String price;
   final int horsePower;
-  final CarImage image;
+  final CarVersionImage image;
   final CarSpecs specs;
-  final int stock;
 
   CarVersion({
     required this.id,
@@ -16,43 +16,41 @@ class CarVersion {
     required this.horsePower,
     required this.image,
     required this.specs,
-    this.stock = 0,
   });
 
   factory CarVersion.fromJson(Map<String, dynamic> json) {
     return CarVersion(
-      id: json['id'] as int,
-      model: json['model'] as String,
-      year: json['year'] as int,
-      price: json['price'] as String,
+      id: json['id'] as int? ?? 0,
+      model: json['model'] as String? ?? '',
+      year: json['year'] as int? ?? 0,
+      price: json['price'] as String? ?? '',
       horsePower: json['horsePower'] as int? ?? 0,
-      image: CarImage.fromJson(json['image'] as Map<String, dynamic>),
-      specs: CarSpecs.fromJson(json['specs'] as Map<String, dynamic>),
-      stock: json['stock'] as int? ?? 0,
+      image: CarVersionImage.fromJson(json['image'] as Map<String, dynamic>? ?? {}),
+      specs: CarSpecs.fromJson(json['specs'] as Map<String, dynamic>? ?? {}),
     );
   }
 }
 
-class CarImage {
+class CarVersionImage {
   final String main;
   final String thumb;
   final List<String> gallery;
   final List<ColorVariant> versions;
 
-  CarImage({
+  CarVersionImage({
     required this.main,
     required this.thumb,
     required this.gallery,
     required this.versions,
   });
 
-  factory CarImage.fromJson(Map<String, dynamic> json) {
-    return CarImage(
-      main: json['main'] as String,
-      thumb: json['thumb'] as String,
-      gallery: List<String>.from(json['gallery'] as List),
-      versions: (json['versions'] as List)
-          .map((e) => ColorVariant.fromJson(e as Map<String, dynamic>))
+  factory CarVersionImage.fromJson(Map<String, dynamic> json) {
+    return CarVersionImage(
+      main: json['main'] as String? ?? '',
+      thumb: json['thumb'] as String? ?? '',
+      gallery: List<String>.from(json['gallery'] as List? ?? []),
+      versions: (json['versions'] as List? ?? [])
+          .map((e) => ColorVariant.fromJson(e as Map<String, dynamic>? ?? {}))
           .toList(),
     );
   }
@@ -66,8 +64,8 @@ class ColorVariant {
 
   factory ColorVariant.fromJson(Map<String, dynamic> json) {
     return ColorVariant(
-      color: json['color'] as String,
-      image: json['image'] as String,
+      color: json['color'] as String? ?? '',
+      image: json['image'] as String? ?? '',
     );
   }
 }
