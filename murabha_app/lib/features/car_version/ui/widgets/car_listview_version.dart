@@ -17,8 +17,6 @@ class CarListVersion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor = isEven ? ColorsManager.grey100 : Colors.white;
-
     return GestureDetector(
       onTap: () {
         context.pushNamed(Routes.carDetailsScreen);
@@ -27,7 +25,6 @@ class CarListVersion extends StatelessWidget {
         children: [
           VerticalSpacing(10.h),
           Container(
-            // color: backgroundColor,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(color: ColorsManager.lighterGrey),
@@ -43,7 +40,7 @@ class CarListVersion extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(6.r),
                     child: Image.network(
-                      version.image.main,
+                      version.image.main, // Use version.image.main
                       width: 130.w,
                       height: 90.h,
                       fit: BoxFit.contain,
@@ -66,27 +63,22 @@ class CarListVersion extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        version.model,
+                        version.model, // Use version.model
                         style: TextStyleManager.font16BlackBold,
                       ),
                       VerticalSpacing(4.h),
                       Text(
-                        "Year: ${version.year}",
+                        "Year: ${version.year}", // Use version.year
                         style: TextStyleManager.font12BlackRegular,
                       ),
                       VerticalSpacing(6.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // MainAxisAlignment.spaceBetween,
                           Text(
-                            version.price,
+                            version.price, // Use version.price
                             style: TextStyleManager.font14BlackBold,
                           ),
-                          // Text(
-                          //   '\$${AppFormatters.formatPrice(10000)}/mo',
-                          //   style: TextStyleManager.font14GreenBold,
-                          // ),
                         ],
                       ),
                     ],
