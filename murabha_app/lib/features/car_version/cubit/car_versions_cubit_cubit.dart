@@ -1,5 +1,7 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:murabha_app/features/car_version/data/models/car_version.dart';
 
 part 'car_versions_cubit_state.dart';
@@ -7,19 +9,34 @@ part 'car_versions_cubit_state.dart';
 class CarVersionsCubit extends Cubit<CarVersionsState> {
   CarVersionsCubit() : super(CarVersionsInitial());
 
-  void loadVersions(String slug) {
+  Future<void> loadVersions(String slug) async {
     emit(CarVersionsLoading());
-    // Mocked data
-    final versions = [
-      CarVersion(year: 2022, price: 25000, stock: 4, model: '', kilometer: 1000000, category: 'Automatic', status: '', bodyStyle: 'Sedan'),
-      CarVersion(year: 2023, price: 27000, stock: 2, model: '', kilometer: 5000000, category: 'Manual', status: '', bodyStyle: 'Hatchback'),
-      CarVersion(year: 2024, price: 29000, stock: 6, model: '', kilometer: 20000, category: 'Automatic', status: '', bodyStyle: 'SUV'),
-      CarVersion(year: 2023, price: 27000, stock: 2, model: '', kilometer: 10000, category: 'Manual', status: '', bodyStyle: 'Sedan'),
-      CarVersion(year: 2024, price: 29000, stock: 6, model: '', kilometer: 30000, category: 'Hybrid', status: '', bodyStyle: 'Hatchback'),
-      CarVersion(year: 2023, price: 27000, stock: 2, model: '', kilometer: 40000, category: 'Manual', status: '', bodyStyle: 'SUV'),
-      CarVersion(year: 2024, price: 29000, stock: 6, model: '', kilometer: 70000, category: 'Automatic', status: '', bodyStyle: 'Sedan'),
-    ];
+    try {
+      // Load JSON from assets
+      final String jsonString = await rootBundle.loadString(
+        'assets/data/cars.json',
+      );
+      final List<dynamic> data = json.decode(jsonString) as List<dynamic>;
 
-    emit(CarVersionsLoaded(versions));
+      // Find brand by slug
+      final Map<String, dynamic> brand = data
+          .cast<Map<String, dynamic>>()
+          .firstWhere(
+            (b) => b['slug'] == slug,
+            orElse: () => data.first as Map<String, dynamic>,
+          );
+
+      final List<dynamic> carsJson =
+          (brand['cars'] as List<dynamic>? ?? <dynamic>[]);
+
+      final versions = carsJson
+          .cast<Map<String, dynamic>>()
+          .map((carJson) => CarVersion.fromJson(carJson))
+          .toList();
+
+      emit(CarVersionsLoaded(versions));
+    } catch (e) {
+      emit(CarVersionsError(e.toString()));
+    }
   }
 }
