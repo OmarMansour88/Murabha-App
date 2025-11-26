@@ -1,264 +1,276 @@
-[{
-  "name": "BAIC",
-  "slug": "baic",
-  "logo": {
-    "source": "https://www.carlogos.org/car-logos/baic-logo.png",
-    "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/baic.png",
-    "optimized": "https://www.carlogos.org/car-logos/baic-logo.png",
-    "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/baic.png",
-    "localThumb": "./thumb/baic.png",
-    "localOptimized": "./optimized/baic.png",
-    "localOriginal": "./original/baic.png"
-  },
-  "cars": [
-    {
-      "id": 1,
-      "model": "BAIC BJ40",
-      "year": 2023,
-      "price": "520,000 EGP",
-      "horsePower": 250,
-      "image": {
-        "main": "https://baic-egypt.com/img/cars/BJ40%20Plus/1.png",
-        "thumb": "https://example.com/bj40-thumb.jpg",
-        "gallery": [
-          "https://example.com/bj40-1.jpg",
-          "https://example.com/bj40-2.jpg"
-        ],
-        
-        "versions": [
-          {
-            "color": "Red",
-            "image": "https://example.com/bj40-red.jpg"
-          },
-          {
-            "color": "Blue",
-            "image": "https://example.com/bj40-blue.jpg"
-          },
-          {
-            "color": "Black",
-            "image": "https://example.com/bj40-black.jpg"
-          }
-        ]
-      },
-      "specs": {
-        "engine": "2.0L Turbo",
-        "topSpeed": "180 km/h",
-        "acceleration": "0-100 in 9.5s",
-        "fuelType": "Petrol",
-        "transmission": "8-Speed Automatic"
-      }
+[
+  {
+    "name": "BAIC",
+    "slug": "baic",
+    "logo": {
+      "source": "https://www.carlogos.org/car-logos/baic-logo.png",
+      "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/baic.png",
+      "optimized": "https://www.carlogos.org/car-logos/baic-logo.png",
+      "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/baic.png",
+      "localThumb": "./thumb/baic.png",
+      "localOptimized": "./optimized/baic.png",
+      "localOriginal": "./original/baic.png"
     },
-    {
-      "id": 2,
-      "model": "BAIC X7",
-      "year": 2024,
-      "price": "610,000 EGP",
-      "horsePower": 190,
-      "image": {
-        "main": "https://bcf-auto.com/cdn/shop/files/X7-product-black.png?v=1716801148&width=1100",
-        "thumb": "https://example.com/x7-thumb.jpg",
-        "gallery": [
-          "https://example.com/x7-1.jpg",
-          "https://example.com/x7-2.jpg",
-          "https://example.com/x7-3.jpg"
-        ]
+    "cars": [
+      {
+        "id": 1,
+        "model": "BAIC BJ40",
+        "year": 2023,
+        "price": "520,000 EGP",
+        "horsePower": 250,
+        "image": {
+          "main": "https://baic-egypt.com/img/cars/BJ40%20Plus/1.png",
+          "thumb": "https://example.com/bj40-thumb.jpg",
+          "gallery": [
+            "https://example.com/bj40-1.jpg",
+            "https://example.com/bj40-2.jpg"
+          ],
+          "versions": [
+            {
+              "color": "Red",
+              "image": "https://example.com/bj40-red.jpg"
+            },
+            {
+              "color": "Blue",
+              "image": "https://example.com/bj40-blue.jpg"
+            },
+            {
+              "color": "Black",
+              "image": "https://example.com/bj40-black.jpg"
+            }
+          ]
+        },
+        "specs": {
+          "engine": "2.0L Turbo",
+          "topSpeed": "180 km/h",
+          "acceleration": "0-100 in 9.5s",
+          "fuelType": "Petrol",
+          "transmission": "8-Speed Automatic"
+        }
       },
-      "specs": {
-        "engine": "1.5L Turbo",
-        "topSpeed": "170 km/h",
-        "acceleration": "0-100 in 10.8s",
-        "fuelType": "Petrol",
-        "transmission": "CVT"
+      {
+        "id": 2,
+        "model": "BAIC X7",
+        "year": 2024,
+        "price": "610,000 EGP",
+        "horsePower": 190,
+        "image": {
+          "main": "https://bcf-auto.com/cdn/shop/files/X7-product-black.png?v=1716801148&width=1100",
+          "thumb": "https://example.com/x7-thumb.jpg",
+          "gallery": [
+            "https://example.com/x7-1.jpg",
+            "https://example.com/x7-2.jpg",
+            "https://example.com/x7-3.jpg"
+          ],
+          "versions": [
+            {
+              "color": "Red",
+              "image": "https://example.com/bj40-red.jpg"
+            },
+            {
+              "color": "Blue",
+              "image": "https://example.com/bj40-blue.jpg"
+            },
+            {
+              "color": "Black",
+              "image": "https://example.com/bj40-black.jpg"
+            }
+          ]
+        },
+        "specs": {
+          "engine": "1.5L Turbo",
+          "topSpeed": "170 km/h",
+          "acceleration": "0-100 in 10.8s",
+          "fuelType": "Petrol",
+          "transmission": "CVT"
+        }
       }
-    }
-  ]
-},
-{
-  "name": "BMW",
-  "slug": "bmw",
-  "logo": {
-    "source": "https://www.carlogos.org/car-logos/bmw-logo.png",
-    "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bmw.png",
-    "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/bmw.png",
-    "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/bmw.png",
-    "localThumb": "./thumb/bmw.png",
-    "localOptimized": "./optimized/bmw.png",
-    "localOriginal": "./original/bmw.png"
+    ]
   },
-  "cars": [
-    {
-      "id": 1,
-      "model": "BMW X5",
-      "year": 2023,
-      "price": "3,600,000 EGP",
-      "horsePower": 335,
-      "image": {
-        "main": "https://banner2.cleanpng.com/20180526/hpi/kisspng-mercedes-benz-c-class-mercedes-benz-e-class-car-lu-5b0a1f0643c8d5.0564332315273899582777.jpg",
-        "thumb": "https://example.com/bmw-x5-thumb.jpg",
-        "gallery": [
-          "https://example.com/bmw-x5-1.jpg",
-          "https://example.com/bmw-x5-2.jpg"
-        ]
-      },
-      "specs": {
-        "engine": "3.0L Turbo",
-        "topSpeed": "243 km/h",
-        "acceleration": "0–100 in 5.5s",
-        "fuelType": "Petrol",
-        "transmission": "8-Speed Automatic"
+  {
+    "name": "BMW",
+    "slug": "bmw",
+    "logo": {
+      "source": "https://www.carlogos.org/car-logos/bmw-logo.png",
+      "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bmw.png",
+      "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/bmw.png",
+      "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/bmw.png",
+      "localThumb": "./thumb/bmw.png",
+      "localOptimized": "./optimized/bmw.png",
+      "localOriginal": "./original/bmw.png"
+    },
+    "cars": [
+      {
+        "id": 1,
+        "model": "BMW X5",
+        "year": 2023,
+        "price": "3,600,000 EGP",
+        "horsePower": 335,
+        "image": {
+          "main": "https://banner2.cleanpng.com/20180526/hpi/kisspng-mercedes-benz-c-class-mercedes-benz-e-class-car-lu-5b0a1f0643c8d5.0564332315273899582777.jpg",
+          "thumb": "https://example.com/bmw-x5-thumb.jpg",
+          "gallery": [
+            "https://example.com/bmw-x5-1.jpg",
+            "https://example.com/bmw-x5-2.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "3.0L Turbo",
+          "topSpeed": "243 km/h",
+          "acceleration": "0–100 in 5.5s",
+          "fuelType": "Petrol",
+          "transmission": "8-Speed Automatic"
+        }
       }
-    }
-  ]
-},{
-  "name": "Mercedes-Benz",
-  "slug": "mercedes",
-  "logo": {
-    "source": "https://www.carlogos.org/car-logos/mercedes-benz-logo.png",
-    "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mercedes.png",
-    "optimized": "https://www.carlogos.org/car-logos/mercedes-benz-logo.png",
-    "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/mercedes.png",
-    "localThumb": "./thumb/mercedes.png",
-    "localOptimized": "./optimized/mercedes.png",
-    "localOriginal": "./original/mercedes.png"
+    ]
   },
-  "cars": [
-    {
-      "id": 1,
-      "model": "Mercedes GLE",
-      "year": 2023,
-      "price": "4,100,000 EGP",
-      "horsePower": 362,
-      "image": {
-        "main": "https://w7.pngwing.com/pngs/104/8/png-transparent-mercedes-benz-m-class-mercedes-benz-glk-class-mercedes-benz-gle-class-car-mercedes-benz-compact-car-car-vehicle.png",
-        "thumb": "https://example.com/gle-thumb.jpg",
-        "gallery": [
-          "https://example.com/gle-1.jpg",
-          "https://example.com/gle-2.jpg"
-        ]
-      },
-      "specs": {
-        "engine": "3.0L Turbo",
-        "topSpeed": "250 km/h",
-        "acceleration": "0–100 in 5.7s",
-        "fuelType": "Petrol",
-        "transmission": "9-Speed Automatic"
+  {
+    "name": "Mercedes-Benz",
+    "slug": "mercedes",
+    "logo": {
+      "source": "https://www.carlogos.org/car-logos/mercedes-benz-logo.png",
+      "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mercedes.png",
+      "optimized": "https://www.carlogos.org/car-logos/mercedes-benz-logo.png",
+      "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/mercedes.png",
+      "localThumb": "./thumb/mercedes.png",
+      "localOptimized": "./optimized/mercedes.png",
+      "localOriginal": "./original/mercedes.png"
+    },
+    "cars": [
+      {
+        "id": 1,
+        "model": "Mercedes GLE",
+        "year": 2023,
+        "price": "4,100,000 EGP",
+        "horsePower": 362,
+        "image": {
+          "main": "https://w7.pngwing.com/pngs/104/8/png-transparent-mercedes-benz-m-class-mercedes-benz-glk-class-mercedes-benz-gle-class-car-mercedes-benz-compact-car-car-vehicle.png",
+          "thumb": "https://example.com/gle-thumb.jpg",
+          "gallery": [
+            "https://example.com/gle-1.jpg",
+            "https://example.com/gle-2.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "3.0L Turbo",
+          "topSpeed": "250 km/h",
+          "acceleration": "0–100 in 5.7s",
+          "fuelType": "Petrol",
+          "transmission": "9-Speed Automatic"
+        }
       }
-    }
-  ]
-}
-,{
-  "name": "Toyota",
-  "slug": "toyota",
-  "logo": {
-    "source": "https://www.carlogos.org/car-logos/toyota-logo.png",
-    "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/toyota.png",
-    "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/toyota.png",
-    "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/toyota.png",
-    "localThumb": "./thumb/toyota.png",
-    "localOptimized": "./optimized/toyota.png",
-    "localOriginal": "./original/toyota.png"
+    ]
   },
-  "cars": [
-    {
-      "id": 1,
-      "model": "Toyota Corolla",
-      "year": 2024,
-      "price": "900,000 EGP",
-      "horsePower": 121,
-      "image": {
-        "main": "https://toppng.com/uploads/preview/toyota-corolla-gli-2016-11562948504q7jmp9esej.png",
-        "thumb": "https://example.com/corolla-thumb.jpg",
-        "gallery": [
-          "https://example.com/corolla-1.jpg",
-          "https://example.com/corolla-2.jpg"
-        ]
-      },
-      "specs": {
-        "engine": "1.6L",
-        "topSpeed": "195 km/h",
-        "acceleration": "0–100 in 12s",
-        "fuelType": "Petrol",
-        "transmission": "CVT"
+  {
+    "name": "Toyota",
+    "slug": "toyota",
+    "logo": {
+      "source": "https://www.carlogos.org/car-logos/toyota-logo.png",
+      "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/toyota.png",
+      "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/toyota.png",
+      "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/toyota.png",
+      "localThumb": "./thumb/toyota.png",
+      "localOptimized": "./optimized/toyota.png",
+      "localOriginal": "./original/toyota.png"
+    },
+    "cars": [
+      {
+        "id": 1,
+        "model": "Toyota Corolla",
+        "year": 2024,
+        "price": "900,000 EGP",
+        "horsePower": 121,
+        "image": {
+          "main": "https://toppng.com/uploads/preview/toyota-corolla-gli-2016-11562948504q7jmp9esej.png",
+          "thumb": "https://example.com/corolla-thumb.jpg",
+          "gallery": [
+            "https://example.com/corolla-1.jpg",
+            "https://example.com/corolla-2.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "1.6L",
+          "topSpeed": "195 km/h",
+          "acceleration": "0–100 in 12s",
+          "fuelType": "Petrol",
+          "transmission": "CVT"
+        }
       }
-    }
-  ]
-},{
-  "name": "Audi",
-  "slug": "audi",
-  "logo": {
-    "source": "https://www.carlogos.org/car-logos/audi-logo.png",
-    "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/audi.png",
-    "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/audi.png",
-    "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/audi.png",
-    "localThumb": "./thumb/audi.png",
-    "localOptimized": "./optimized/audi.png",
-    "localOriginal": "./original/audi.png"
+    ]
   },
-  "cars": [
-    {
-      "id": 1,
-      "model": "Audi Q7",
-      "year": 2023,
-      "price": "3,900,000 EGP",
-      "horsePower": 335,
-      "image": {
-        "main": "https://p7.hiclipart.com/preview/375/169/316/2018-audi-q7-car-2013-audi-q7-sport-utility-vehicle-audi.jpg",
-        "thumb": "https://example.com/q7-thumb.jpg",
-        "gallery": [
-          "https://example.com/q7-1.jpg",
-          "https://example.com/q7-2.jpg"
-        ]
-      },
-      "specs": {
-        "engine": "3.0L Turbo",
-        "topSpeed": "250 km/h",
-        "acceleration": "0–100 in 5.9s",
-        "fuelType": "Petrol",
-        "transmission": "8-Speed Automatic"
+  {
+    "name": "Audi",
+    "slug": "audi",
+    "logo": {
+      "source": "https://www.carlogos.org/car-logos/audi-logo.png",
+      "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/audi.png",
+      "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/audi.png",
+      "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/audi.png",
+      "localThumb": "./thumb/audi.png",
+      "localOptimized": "./optimized/audi.png",
+      "localOriginal": "./original/audi.png"
+    },
+    "cars": [
+      {
+        "id": 1,
+        "model": "Audi Q7",
+        "year": 2023,
+        "price": "3,900,000 EGP",
+        "horsePower": 335,
+        "image": {
+          "main": "https://p7.hiclipart.com/preview/375/169/316/2018-audi-q7-car-2013-audi-q7-sport-utility-vehicle-audi.jpg",
+          "thumb": "https://example.com/q7-thumb.jpg",
+          "gallery": [
+            "https://example.com/q7-1.jpg",
+            "https://example.com/q7-2.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "3.0L Turbo",
+          "topSpeed": "250 km/h",
+          "acceleration": "0–100 in 5.9s",
+          "fuelType": "Petrol",
+          "transmission": "8-Speed Automatic"
+        }
       }
-    }
-  ]
-},
-{
-  "name": "Hyundai",
-  "slug": "hyundai",
-  "logo": {
-    "source": "https://www.carlogos.org/car-logos/hyundai-logo.png",
-    "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hyundai.png",
-    "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/hyundai.png",
-    "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/hyundai.png",
-    "localThumb": "./thumb/hyundai.png",
-    "localOptimized": "./optimized/hyundai.png",
-    "localOriginal": "./original/hyundai.png"
+    ]
   },
-  "cars": [
-    {
-      "id": 1,
-      "model": "Hyundai Tucson",
-      "year": 2024,
-      "price": "1,650,000 EGP",
-      "horsePower": 156,
-      "image": {
-        "main": "https://images.dealer.com/ddc/vehicles/2023/Hyundai/Tucson%20Hybrid/SUV/perspective/front-left/2023_24.png",
-        "thumb": "https://example.com/tucson-thumb.jpg",
-        "gallery": [
-          "https://example.com/tucson-1.jpg",
-          "https://example.com/tucson-2.jpg",
-          "https://example.com/tucson-3.jpg"
-        ]
-      },
-      "specs": {
-        "engine": "1.6L Turbo",
-        "topSpeed": "201 km/h",
-        "acceleration": "0–100 in 9.4s",
-        "fuelType": "Petrol",
-        "transmission": "7-Speed DCT"
+  {
+    "name": "Hyundai",
+    "slug": "hyundai",
+    "logo": {
+      "source": "https://www.carlogos.org/car-logos/hyundai-logo.png",
+      "thumb": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hyundai.png",
+      "optimized": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/optimized/hyundai.png",
+      "original": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/hyundai.png",
+      "localThumb": "./thumb/hyundai.png",
+      "localOptimized": "./optimized/hyundai.png",
+      "localOriginal": "./original/hyundai.png"
+    },
+    "cars": [
+      {
+        "id": 1,
+        "model": "Hyundai Tucson",
+        "year": 2024,
+        "price": "1,650,000 EGP",
+        "horsePower": 156,
+        "image": {
+          "main": "https://images.dealer.com/ddc/vehicles/2023/Hyundai/Tucson%20Hybrid/SUV/perspective/front-left/2023_24.png",
+          "thumb": "https://example.com/tucson-thumb.jpg",
+          "gallery": [
+            "https://example.com/tucson-1.jpg",
+            "https://example.com/tucson-2.jpg",
+            "https://example.com/tucson-3.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "1.6L Turbo",
+          "topSpeed": "201 km/h",
+          "acceleration": "0–100 in 9.4s",
+          "fuelType": "Petrol",
+          "transmission": "7-Speed DCT"
+        }
       }
-    }
-  ]
-}
-
-
-
-
+    ]
+  }
 ]

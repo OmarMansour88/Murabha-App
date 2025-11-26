@@ -27,53 +27,124 @@ class CarGridVersion extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Car Image
-            Container(
-              height: 155.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: ColorsManager.moreLighterGrey,
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: ClipRRect(
-                child: Image.asset(
-                  'assets/images/onboarding_middle_screen_car_option1_1_2.png',
-                  fit: BoxFit.contain,
-                ),
+            // Car Image with Color Variants (from network)
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: ColorsManager.moreLighterGrey,
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.r),
+                      child: Image.network(
+                        version.image.main,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(
+                            child: CircularProgressIndicator(
+                              color: ColorsManager.primaryColor,
+                            ),
+                          );
+                        },
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(Icons.error),
+                      ),
+                    ),
+                  ),
+                  if (version.image.versions.isNotEmpty)
+                    Positioned(
+                      bottom: 8,
+                      right: 8,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 4.w,
+                          vertical: 2.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
+                        child: Text(
+                          '${version.image.versions.length} colors',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
             VerticalSpacing(8.h),
             // Car Info
             Text(
-              'Toyota Corolla',
+              version.model,
               style: TextStyleManager.font18BlackSemiBold,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             VerticalSpacing(4.h),
-            Text(
-              'Year: ${version.year}',
-              style: TextStyleManager.font14BlackRegular,
-            ),
-            Text(
-              '${AppFormatters.formatKilometers(version.kilometer)} KM | ${version.category}',
-              style: TextStyleManager.font14BlackRegular,
-            ),
-            VerticalSpacing(10.h),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // MainAxisAlignment.spaceBetween,
-                Text(
-                  '\$${AppFormatters.formatPrice(version.price)}',
-                  style: TextStyleManager.font16BlackBold,
+                Icon(
+                  Icons.calendar_today,
+                  size: 14.sp,
+                  color: ColorsManager.grey,
                 ),
+                HorizontalSpacing(4.w),
                 Text(
-                  '\$${AppFormatters.formatPrice(10000)}/mo',
-                  style: TextStyleManager.font18GreenBold,
+                  version.year.toString(),
+                  style: TextStyleManager.font12GreyMedium,
                 ),
               ],
             ),
+            VerticalSpacing(4.h),
+            Row(
+              children: [
+                Icon(Icons.speed, size: 14.sp, color: ColorsManager.grey),
+                HorizontalSpacing(4.w),
+                Text(
+                  '${version.horsePower} HP',
+                  style: TextStyleManager.font12GreyMedium,
+                ),
+              ],
+            ),
+            VerticalSpacing(4.h),
+            Row(
+              children: [
+                Icon(
+                  Icons.local_gas_station,
+                  size: 14.sp,
+                  color: ColorsManager.grey,
+                ),
+                HorizontalSpacing(4.w),
+                Text(
+                  version.specs.fuelType,
+                  style: TextStyleManager.font12GreyMedium,
+                ),
+              ],
+            ),
+            VerticalSpacing(8.h),
+            // Price as string from JSON (e.g. "520,000 EGP")
+            Text(version.price, style: TextStyleManager.font16BlackBold),
+            VerticalSpacing(10.h),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     // MainAxisAlignment.spaceBetween,
+            //     Text(
+            //       '\$${AppFormatters.formatPrice(10000)}/mo',
+            //       style: TextStyleManager.font18GreenBold,
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),

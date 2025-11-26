@@ -40,11 +40,24 @@ class CarListVersion extends StatelessWidget {
                     color: ColorsManager.moreLighterGrey,
                     borderRadius: BorderRadius.circular(6.r),
                   ),
-                  child: Image.asset(
-                    'assets/images/onboarding_middle_screen_car_option1_1_2.png',
-                    width: 130.w,
-                    height: 90.h,
-                    fit: BoxFit.contain,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.r),
+                    child: Image.network(
+                      version.image.main,
+                      width: 130.w,
+                      height: 90.h,
+                      fit: BoxFit.contain,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Center(
+                          child: CircularProgressIndicator(
+                            color: ColorsManager.primaryColor,
+                          ),
+                        );
+                      },
+                      errorBuilder: (context, error, stackTrace) =>
+                          const Icon(Icons.error),
+                    ),
                   ),
                 ),
                 HorizontalSpacing(16.w),
@@ -53,16 +66,12 @@ class CarListVersion extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Toyota Corolla',
+                        version.model,
                         style: TextStyleManager.font16BlackBold,
                       ),
                       VerticalSpacing(4.h),
                       Text(
                         "Year: ${version.year}",
-                        style: TextStyleManager.font12BlackRegular,
-                      ),
-                      Text(
-                        "${AppFormatters.formatKilometers(version.kilometer)} KM | ${version.category}",
                         style: TextStyleManager.font12BlackRegular,
                       ),
                       VerticalSpacing(6.h),
@@ -71,13 +80,13 @@ class CarListVersion extends StatelessWidget {
                         children: [
                           // MainAxisAlignment.spaceBetween,
                           Text(
-                            '\$${AppFormatters.formatPrice(version.price)}',
+                            version.price,
                             style: TextStyleManager.font14BlackBold,
                           ),
-                          Text(
-                            '\$${AppFormatters.formatPrice(10000)}/mo',
-                            style: TextStyleManager.font14GreenBold,
-                          ),
+                          // Text(
+                          //   '\$${AppFormatters.formatPrice(10000)}/mo',
+                          //   style: TextStyleManager.font14GreenBold,
+                          // ),
                         ],
                       ),
                     ],
