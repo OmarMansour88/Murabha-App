@@ -21,7 +21,7 @@ class _BrowseCarState extends State<BrowseCar> {
 
   Future<List<CarBrand>> loadCars() async {
     final String jsonString = await rootBundle.loadString(
-      'assets/data/data.json',
+      'assets/data/cars.json',
     );
     final List<dynamic> jsonResponse = json.decode(jsonString);
     return jsonResponse.map((data) => CarBrand.fromJson(data)).toList();
@@ -49,7 +49,7 @@ class _BrowseCarState extends State<BrowseCar> {
             } else {
               final names = snapshot.data!.map((car) => car.name).toList();
               final optimizedUrls = snapshot.data!
-                  .map((car) => car.image.optimized)
+                  .map((car) => car.image.source)
                   .toList();
 
               return Padding(
@@ -71,7 +71,7 @@ class _BrowseCarState extends State<BrowseCar> {
                           mainAxisSpacing: 20,
                           childAspectRatio: 1,
                         ),
-                        itemCount: 50,
+                        itemCount: names.length,
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () {

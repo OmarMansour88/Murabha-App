@@ -22,7 +22,7 @@ class MurabhaApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.carVersionScreen,
+        initialRoute: Routes.carBrowseScreen,
       ),
     );
   }
