@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:murabha_app/core/di/dependency_injection.dart';
 import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
+import 'package:murabha_app/features/carList/data/models/car_model.dart';
 import 'package:murabha_app/features/car_application/ui/application_form.dart';
 import 'package:murabha_app/features/car_details/ui/car_details.dart';
 import 'package:murabha_app/features/car_version/data/models/car_version.dart';
 import 'package:murabha_app/features/car_version/ui/car_version_screen.dart';
+import 'package:murabha_app/features/car_version/ui/widgets/car_combained_lists.dart';
 import 'package:murabha_app/features/home/ui/home_Screen.dart';
 import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_cubit.dart';
 import 'package:murabha_app/features/login/logic/otp/cubit/otp_cubit.dart';
@@ -47,7 +49,9 @@ class AppRouter {
       case Routes.applicationForm:
         return MaterialPageRoute(builder: (_) => ApplicationForm());
       case Routes.listCarScreen:
-        return MaterialPageRoute(builder: (_) => ListOfCarScreen());
+        return MaterialPageRoute(
+          builder: (_) => ListOfCarScreen(brandSlug: ''),
+        );
       case Routes.notificationListScreen:
         return MaterialPageRoute(builder: (_) => NotificationListScreen());
       case Routes.carDetailsScreen:
@@ -62,7 +66,9 @@ class AppRouter {
       case Routes.myApplicationsScreen:
         return MaterialPageRoute(builder: (_) => MyApplications());
       case Routes.carVersionScreen:
-        return MaterialPageRoute(builder: (_) => CarVersionScreen());
+        final cars = settings.arguments as List<CarModel>;
+        return MaterialPageRoute(builder: (_) => CarVersionScreen(cars: cars));
+
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

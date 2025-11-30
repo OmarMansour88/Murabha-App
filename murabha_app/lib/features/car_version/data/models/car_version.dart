@@ -1,30 +1,31 @@
 // car_version.dart
+
 class CarVersion {
-  final int id;
+  final int? id;
   final String model;
   final int year;
   final String price;
-  final int horsePower;
+  final int? horsePower;
   final CarVersionImage image;
   final CarSpecs specs;
 
   CarVersion({
-    required this.id,
+    this.id,
     required this.model,
     required this.year,
     required this.price,
-    required this.horsePower,
+    this.horsePower,
     required this.image,
     required this.specs,
   });
 
   factory CarVersion.fromJson(Map<String, dynamic> json) {
     return CarVersion(
-      id: json['id'] as int? ?? 0,
+      id: json['id'] is int ? json['id'] : int.tryParse(json['id']?.toString() ?? ''),
       model: json['model'] as String? ?? '',
       year: json['year'] as int? ?? 0,
       price: json['price'] as String? ?? '',
-      horsePower: json['horsePower'] as int? ?? 0,
+      horsePower: json['horsePower'] as int?,
       image: CarVersionImage.fromJson(json['image'] as Map<String, dynamic>? ?? {}),
       specs: CarSpecs.fromJson(json['specs'] as Map<String, dynamic>? ?? {}),
     );

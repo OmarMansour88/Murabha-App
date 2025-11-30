@@ -8,6 +8,7 @@ import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
 import 'package:murabha_app/features/browse_car/data/models/car_brands.dart';
+import 'package:murabha_app/features/carList/ui/list_of_car_screen.dart';
 
 class BrowseCar extends StatefulWidget {
   const BrowseCar({super.key});
@@ -75,8 +76,18 @@ class _BrowseCarState extends State<BrowseCar> {
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () {
-                              context.pushNamed(Routes.listCarScreen);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => ListOfCarScreen(
+                                    brandSlug: snapshot
+                                        .data![index]
+                                        .slug, // pass the slug dynamically
+                                  ),
+                                ),
+                              );
                             },
+
                             child: Container(
                               height: double.maxFinite,
                               decoration: BoxDecoration(
