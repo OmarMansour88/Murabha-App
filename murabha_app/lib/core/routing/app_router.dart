@@ -5,6 +5,7 @@ import 'package:murabha_app/core/routing/routes.dart';
 import 'package:murabha_app/features/browse_car/ui/browse_car.dart';
 import 'package:murabha_app/features/car_application/ui/application_form.dart';
 import 'package:murabha_app/features/car_details/ui/car_details.dart';
+import 'package:murabha_app/features/car_version/data/models/car_version.dart';
 import 'package:murabha_app/features/car_version/ui/car_version_screen.dart';
 import 'package:murabha_app/features/home/ui/home_Screen.dart';
 import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_cubit.dart';
@@ -50,7 +51,8 @@ class AppRouter {
       case Routes.notificationListScreen:
         return MaterialPageRoute(builder: (_) => NotificationListScreen());
       case Routes.carDetailsScreen:
-        return MaterialPageRoute(builder: (_) => CarDetails());
+        final version = settings.arguments as CarVersion;
+        return MaterialPageRoute(builder: (_) => CarDetails(version: version));
       case Routes.settingsScreen:
         return MaterialPageRoute(builder: (_) => SettingScreen());
       case Routes.profileScreen:

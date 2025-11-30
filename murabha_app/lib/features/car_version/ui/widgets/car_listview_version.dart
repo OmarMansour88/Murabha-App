@@ -18,9 +18,17 @@ class CarListVersion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // onTap: () {
+      //   context.pushNamed(Routes.carDetailsScreen);
+      // },
       onTap: () {
-        context.pushNamed(Routes.carDetailsScreen);
+        Navigator.pushNamed(
+          context,
+          Routes.carDetailsScreen,
+          arguments: version,
+        );
       },
+
       child: Column(
         children: [
           VerticalSpacing(10.h),
