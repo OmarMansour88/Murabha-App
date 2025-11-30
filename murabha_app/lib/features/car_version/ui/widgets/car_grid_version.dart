@@ -16,7 +16,14 @@ class CarGridVersion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushNamed(Routes.carDetailsScreen),
+      // onTap: () => context.pushNamed(Routes.carDetailsScreen),
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          Routes.carDetailsScreen,
+          arguments: version,
+        );
+      },
       child: Container(
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(

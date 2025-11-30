@@ -5,7 +5,23 @@ import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 
 class CarSpecifications extends StatelessWidget {
-  const CarSpecifications({super.key});
+  final String engine;
+  final String topSpeed;
+  final String acceleration;
+  final String fuelType;
+  final String transmission;
+  final String horsePower;
+
+  const CarSpecifications({
+    super.key,
+    required this.engine,
+    required this.topSpeed,
+    required this.acceleration,
+    required this.fuelType,
+    required this.transmission,
+    required this.horsePower,
+  });
+
 
   @override
   Widget build(BuildContext context) {
