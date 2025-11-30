@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:murabha_app/core/helpers/app_formatters.dart';
 import 'package:murabha_app/core/helpers/extensions.dart';
 import 'package:murabha_app/core/helpers/spacing.dart';
 import 'package:murabha_app/core/routing/routes.dart';
@@ -12,7 +10,8 @@ import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/features/carList/data/models/car_model.dart';
 
 class ListOfCar extends StatefulWidget {
-  const ListOfCar({super.key});
+  final String brandSlug;
+  const ListOfCar({super.key, required this.brandSlug});
 
   @override
   State<ListOfCar> createState() => _ListOfCarState();
@@ -23,155 +22,47 @@ class _ListOfCarState extends State<ListOfCar> {
 
   late Future<List<CarModel>> carModels;
 
-  Future<List<CarModel>> loadCars() async {
+  Map<String, List<CarModel>> groupByModel(List<CarModel> cars) {
+    final Map<String, List<CarModel>> grouped = {};
+
+    for (var car in cars) {
+      grouped.putIfAbsent(car.model, () => []);
+      grouped[car.model]!.add(car);
+    }
+
+    return grouped;
+  }
+
+  Future<List<CarModel>> loadCars(String brandSlug) async {
     final String jsonString = await rootBundle.loadString(
       'assets/data/cars.json',
     );
-    final List<dynamic> jsonResponse = json.decode(jsonString)[0]['cars'];
-    return jsonResponse.map((data) => CarModel.fromJson(data)).toList();
+    final List<dynamic> jsonResponse = json.decode(jsonString);
+
+    // Find the brand that matches the slug
+    final brandData = jsonResponse.firstWhere(
+      (brand) => brand['slug'] == brandSlug,
+      orElse: () => null,
+    );
+
+    if (brandData == null) {
+      return []; // Return empty list if brand not found
+    }
+
+    final List<dynamic> carsJson = brandData['cars'];
+    return carsJson.map((data) => CarModel.fromJson(data)).toList();
   }
 
   @override
   void initState() {
     super.initState();
-    carModels = loadCars();
-    print("omar" + carModels.toString());
+    carModels = loadCars(widget.brandSlug); // use widget.brandSlug
   }
-  // late List<CarModel> carModels;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   carModels = [
-  //     CarModel(
-  //       name: 'Toyota Corolla',
-  //       slug: 'toyota-corolla',
-  //       image: ImageUrls(
-  //         source: 'assets/images/Sls Black Series-Photoroom.png',
-  //         thumb: '',
-  //         optimized: '',
-  //         original: '',
-  //         localThumb: '',
-  //         localOptimized: '',
-  //         localOriginal: '',
-  //       ),
-  //     ),
-  //     CarModel(
-  //       name: 'Toyota Yaris',
-  //       slug: 'toyota-yaris',
-  //       image: ImageUrls(
-  //         source: 'assets/images/Sls Black Series-Photoroom.png',
-  //         thumb: '',
-  //         optimized: '',
-  //         original: '',
-  //         localThumb: '',
-  //         localOptimized: '',
-  //         localOriginal: '',
-  //       ),
-  //     ),
-  //     CarModel(
-  //       name: 'Toyota Camry',
-  //       slug: 'toyota-camry',
-  //       image: ImageUrls(
-  //         source: 'assets/images/Sls Black Series-Photoroom.png',
-  //         thumb: '',
-  //         optimized: '',
-  //         original: '',
-  //         localThumb: '',
-  //         localOptimized: '',
-  //         localOriginal: '',
-  //       ),
-  //     ),
-  //     CarModel(
-  //       name: 'Toyota Hilux',
-  //       slug: 'toyota-hilux',
-  //       image: ImageUrls(
-  //         source: 'assets/images/Sls Black Series-Photoroom.png',
-  //         thumb: '',
-  //         optimized: '',
-  //         original: '',
-  //         localThumb: '',
-  //         localOptimized: '',
-  //         localOriginal: '',
-  //       ),
-  //     ),
-  //     CarModel(
-  //       name: 'Toyota Land Cruiser',
-  //       slug: 'toyota-land-cruiser',
-  //       image: ImageUrls(
-  //         source: 'assets/images/Sls Black Series-Photoroom.png',
-  //         thumb: '',
-  //         optimized: '',
-  //         original: '',
-  //         localThumb: '',
-  //         localOptimized: '',
-  //         localOriginal: '',
-  //       ),
-  //     ),
-  //     CarModel(
-  //       name: 'Toyota Fortuner',
-  //       slug: 'toyota-fortuner',
-  //       image: ImageUrls(
-  //         source: 'assets/images/Sls Black Series-Photoroom.png',
-  //         thumb: '',
-  //         optimized: '',
-  //         original: '',
-  //         localThumb: '',
-  //         localOptimized: '',
-  //         localOriginal: '',
-  //       ),
-  //     ),
-  //   ];
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsManager.primaryColor,
-
-      // body: ListView.builder(
-      //   padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-      //   itemCount: carModels.length,
-      //   itemBuilder: (context, index) {
-      //     final model = carModels[index];
-      //     return GestureDetector(
-      //       onTap: () {
-      //         // context.pushNamed(Routes.carDetailsScreen);
-      //         context.pushNamed(Routes.carVersionScreen);
-      //       },
-      //       child: Container(
-      //         margin: EdgeInsets.only(bottom: 12.h),
-      //         decoration: BoxDecoration(
-      //           color: Colors.white,
-      //           borderRadius: BorderRadius.circular(12),
-      //           boxShadow: [
-      //             BoxShadow(
-      //               color: Colors.grey.withOpacity(0.2),
-      //               blurRadius: 6,
-      //               offset: Offset(0, 3),
-      //             ),
-      //           ],
-      //         ),
-      //         child: ListTile(
-      //           contentPadding: EdgeInsets.all(12.w),
-      //           leading: ClipRRect(
-      //             borderRadius: BorderRadius.circular(8),
-      //             child: Image.asset(
-      //               model.image.source,
-      //               width: 60.w,
-      //               height: 60.h,
-      //               fit: BoxFit.cover,
-      //             ),
-      //           ),
-      //           title: Text(
-      //             model.name,
-      //             style: TextStyleManager.font12BlackRegular,
-      //           ),
-      //         ),
-      //       ),
-      //     );
-      //   },
-      // ),
       body: FutureBuilder<List<CarModel>>(
         future: carModels,
         builder: (context, snapshot) {
@@ -185,6 +76,8 @@ class _ListOfCarState extends State<ListOfCar> {
           }
 
           final cars = snapshot.data!;
+          final groupedCars = groupByModel(cars);
+          final modelNames = groupedCars.keys.toList();
 
           return ClipRRect(
             borderRadius: BorderRadius.only(
@@ -195,12 +88,20 @@ class _ListOfCarState extends State<ListOfCar> {
               color: Colors.white,
               child: ListView.builder(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                itemCount: cars.length,
+                itemCount: modelNames.length,
                 itemBuilder: (context, index) {
-                  final model = cars[index];
+                  final modelName = modelNames[index];
+                  final versions = groupedCars[modelName]!;
+
                   return GestureDetector(
                     onTap: () {
-                      context.pushNamed(Routes.carVersionScreen);
+                      final selectedVersions =
+                          groupedCars[modelName]!; // List<CarModel>
+                      Navigator.pushNamed(
+                        context,
+                        Routes.carVersionScreen,
+                        arguments: selectedVersions, // pass as List<CarModel>
+                      );
                     },
                     child: Column(
                       children: [
@@ -218,13 +119,14 @@ class _ListOfCarState extends State<ListOfCar> {
                           ),
                           child: Row(
                             children: [
+                              // Display first version image
                               Container(
                                 decoration: BoxDecoration(
                                   color: ColorsManager.moreLighterGrey,
                                   borderRadius: BorderRadius.circular(6.r),
                                 ),
                                 child: Image.network(
-                                  model.image.main,
+                                  versions.first.image.main,
                                   width: 120.w,
                                   height: 90.h,
                                   fit: BoxFit.contain,
@@ -236,35 +138,14 @@ class _ListOfCarState extends State<ListOfCar> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      model.model,
+                                      modelName,
                                       style: TextStyleManager.font14BlackBold,
                                     ),
                                     VerticalSpacing(4.h),
                                     Text(
-                                      "Engine: ${model.specs.engine}",
+                                      "${versions.length} Versions Available",
                                       style:
                                           TextStyleManager.font12BlackRegular,
-                                    ),
-                                    Text(
-                                      "${model.specs.fuelType}  | ${model.specs.transmission}",
-                                      style:
-                                          TextStyleManager.font12BlackRegular,
-                                    ),
-                                    VerticalSpacing(6.h),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        // MainAxisAlignment.spaceBetween,
-                                        // Text(
-                                        //   "1000000 KM | Manual",
-                                        //   style: TextStyleManager.font14BlackBold,
-                                        // ),
-                                        // Text(
-                                        //   '\$${AppFormatters.formatPrice(10000)}/mo',
-                                        //   style: TextStyleManager.font14GreenBold,
-                                        // ),
-                                      ],
                                     ),
                                   ],
                                 ),
@@ -274,36 +155,6 @@ class _ListOfCarState extends State<ListOfCar> {
                         ),
                       ],
                     ),
-                    // child: Container(
-                    //   margin: EdgeInsets.only(bottom: 12.h),
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.white,
-                    //     borderRadius: BorderRadius.circular(12),
-                    //     boxShadow: [
-                    //       BoxShadow(
-                    //         color: Colors.grey.withOpacity(0.2),
-                    //         blurRadius: 6,
-                    //         offset: Offset(0, 3),
-                    //       ),
-                    //     ],
-                    //   ),
-                    //   child: ListTile(
-                    //     contentPadding: EdgeInsets.all(12.w),
-                    //     leading: ClipRRect(
-                    //       borderRadius: BorderRadius.circular(8),
-                    //       child: Image.network(
-                    //         model.image.source,
-                    //         // width: 12.w,
-                    //         // height: 12.h,
-                    //         fit: BoxFit.cover,
-                    //       ),
-                    //     ),
-                    //     title: Text(
-                    //       model.name,
-                    //       style: TextStyleManager.font12BlackRegular,
-                    //     ),
-                    //   ),
-                    // ),
                   );
                 },
               ),

@@ -11,12 +11,12 @@
       "localOptimized": "./optimized/baic.png",
       "localOriginal": "./original/baic.png"
     },
-    "cars": [
+"cars": [
       {
         "id": 1,
         "model": "BAIC BJ40",
-        "year": 2023,
-        "price": "520,000 EGP",
+        "year": 2020,
+        "price": "480,000 EGP",
         "horsePower": 250,
         "image": {
           "main": "https://baic-egypt.com/img/cars/BJ40%20Plus/1.png",
@@ -24,20 +24,6 @@
           "gallery": [
             "https://example.com/bj40-1.jpg",
             "https://example.com/bj40-2.jpg"
-          ],
-          "versions": [
-            {
-              "color": "Red",
-              "image": "https://example.com/bj40-red.jpg"
-            },
-            {
-              "color": "Blue",
-              "image": "https://example.com/bj40-blue.jpg"
-            },
-            {
-              "color": "Black",
-              "image": "https://example.com/bj40-black.jpg"
-            }
           ]
         },
         "specs": {
@@ -50,6 +36,73 @@
       },
       {
         "id": 2,
+        "model": "BAIC BJ40",
+        "year": 2022,
+        "price": "500,000 EGP",
+        "horsePower": 250,
+        "image": {
+          "main": "https://baic-egypt.com/img/cars/BJ40%20Plus/1.png",
+          "thumb": "https://example.com/bj40-thumb.jpg",
+          "gallery": [
+            "https://example.com/bj40-1.jpg",
+            "https://example.com/bj40-2.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "2.0L Turbo",
+          "topSpeed": "180 km/h",
+          "acceleration": "0-100 in 9.5s",
+          "fuelType": "Petrol",
+          "transmission": "8-Speed Automatic"
+        }
+      },
+      {
+        "id": 3,
+        "model": "BAIC BJ40",
+        "year": 2023,
+        "price": "520,000 EGP",
+        "horsePower": 250,
+        "image": {
+          "main": "https://baic-egypt.com/img/cars/BJ40%20Plus/1.png",
+          "thumb": "https://example.com/bj40-thumb.jpg",
+          "gallery": [
+            "https://example.com/bj40-1.jpg",
+            "https://example.com/bj40-2.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "2.0L Turbo",
+          "topSpeed": "180 km/h",
+          "acceleration": "0-100 in 9.5s",
+          "fuelType": "Petrol",
+          "transmission": "8-Speed Automatic"
+        }
+      },
+      {
+        "id": 4,
+        "model": "BAIC X7",
+        "year": 2022,
+        "price": "590,000 EGP",
+        "horsePower": 190,
+        "image": {
+          "main": "https://bcf-auto.com/cdn/shop/files/X7-product-black.png?v=1716801148&width=1100",
+          "thumb": "https://example.com/x7-thumb.jpg",
+          "gallery": [
+            "https://example.com/x7-1.jpg",
+            "https://example.com/x7-2.jpg",
+            "https://example.com/x7-3.jpg"
+          ]
+        },
+        "specs": {
+          "engine": "1.5L Turbo",
+          "topSpeed": "170 km/h",
+          "acceleration": "0-100 in 10.8s",
+          "fuelType": "Petrol",
+          "transmission": "CVT"
+        }
+      },
+      {
+        "id": 5,
         "model": "BAIC X7",
         "year": 2024,
         "price": "610,000 EGP",
@@ -61,20 +114,6 @@
             "https://example.com/x7-1.jpg",
             "https://example.com/x7-2.jpg",
             "https://example.com/x7-3.jpg"
-          ],
-          "versions": [
-            {
-              "color": "Red",
-              "image": "https://example.com/bj40-red.jpg"
-            },
-            {
-              "color": "Blue",
-              "image": "https://example.com/bj40-blue.jpg"
-            },
-            {
-              "color": "Black",
-              "image": "https://example.com/bj40-black.jpg"
-            }
           ]
         },
         "specs": {

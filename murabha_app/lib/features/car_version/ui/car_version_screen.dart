@@ -3,10 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
+import 'package:murabha_app/features/carList/data/models/car_model.dart';
 import 'package:murabha_app/features/car_version/ui/widgets/car_combained_lists.dart';
 
 class CarVersionScreen extends StatelessWidget {
-  const CarVersionScreen({super.key});
+  final List<CarModel> cars;
+
+  const CarVersionScreen({super.key, required this.cars});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class CarVersionScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 0.w),
-        child: CarCombainedLists(),
+        child: CarCombainedLists(cars: cars), // pass CarModel list
       ),
       bottomNavigationBar: AppUniversalBottomNavBar(),
     );
