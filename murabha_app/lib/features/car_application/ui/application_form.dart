@@ -6,6 +6,7 @@ import 'package:murabha_app/core/themes/colors_manager.dart';
 import 'package:murabha_app/core/themes/text_style_manager.dart';
 import 'package:murabha_app/core/widgets/app_divider.dart';
 import 'package:murabha_app/core/widgets/app_dropdown_list.dart';
+import 'package:murabha_app/core/widgets/custom_app_bar.dart';
 import 'package:murabha_app/core/widgets/navigation_bar.dart';
 
 class ApplicationForm extends StatefulWidget {
@@ -19,10 +20,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Application Form"),
-        backgroundColor: Colors.white,
-      ),
+      appBar: CustomAppBar(title: "Application Form", backgroundColor: Colors.white),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:murabha_app/features/car_version/data/models/car_version.dart';
 
-part 'car_versions_cubit_state.dart';
+part 'car_versions_state.dart';
 
 class CarVersionsCubit extends Cubit<CarVersionsState> {
   CarVersionsCubit() : super(CarVersionsInitial());
