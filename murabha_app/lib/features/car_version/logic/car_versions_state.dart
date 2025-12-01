@@ -1,4 +1,4 @@
-part of 'car_versions_cubit_cubit.dart';
+part of 'car_versions_cubit.dart';
 
 abstract class CarVersionsState {}
 

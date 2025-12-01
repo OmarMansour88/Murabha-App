@@ -8,7 +8,6 @@ import 'package:murabha_app/features/car_application/ui/application_form.dart';
 import 'package:murabha_app/features/car_details/ui/car_details.dart';
 import 'package:murabha_app/features/car_version/data/models/car_version.dart';
 import 'package:murabha_app/features/car_version/ui/car_version_screen.dart';
-import 'package:murabha_app/features/car_version/ui/widgets/car_combained_lists.dart';
 import 'package:murabha_app/features/home/ui/home_Screen.dart';
 import 'package:murabha_app/features/login/logic/login/cubit/login_cubit_cubit.dart';
 import 'package:murabha_app/features/login/logic/otp/cubit/otp_cubit.dart';
@@ -38,7 +37,7 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.carBrowseScreen:
-        return MaterialPageRoute(builder: (_) => BrowseCar());
+        return MaterialPageRoute(builder: (_) => BrowseCarScreen());
       case Routes.otpScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -49,8 +48,9 @@ class AppRouter {
       case Routes.applicationForm:
         return MaterialPageRoute(builder: (_) => ApplicationForm());
       case Routes.listCarScreen:
+        final brandSlug = settings.arguments as String;
         return MaterialPageRoute(
-          builder: (_) => ListOfCarScreen(brandSlug: ''),
+          builder: (_) => ListOfCarScreen(brandSlug: brandSlug),
         );
       case Routes.notificationListScreen:
         return MaterialPageRoute(builder: (_) => NotificationListScreen());

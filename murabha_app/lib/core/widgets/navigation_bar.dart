@@ -94,7 +94,7 @@ class _AppUniversalBottomNavBarState extends State<AppUniversalBottomNavBar> {
                     Navigator.of(context).pushReplacement(
                       PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            BrowseCar(),
+                            BrowseCarScreen(),
                         transitionDuration: Duration.zero,
                         reverseTransitionDuration: Duration.zero,
                       ),
